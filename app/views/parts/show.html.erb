@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item Part Number:</strong>
+  <%= @part.item_part_number %>
+</p>
+
+<p>
+  <strong>Part Number:</strong>
+  <%= @part.part_number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @part.description %>
+</p>
+
+<p>
+  <strong>Package Level GTIN:</strong>
+  <%= @part.package_level_gtin %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @part.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @part.width %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @part.length %>
+</p>
+
+<p>
+  <strong>Shipping Height:</strong>
+  <%= @part.shipping_height %>
+</p>
+
+<p>
+  <strong>Shipping Width:</strong>
+  <%= @part.shipping_width %>
+</p>
+
+<p>
+  <strong>Shipping Length:</strong>
+  <%= @part.shipping_length %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @part.weight %>
+</p>
+
+<p>
+  <strong>Attribute Name:</strong>
+  <%= @part.attribute_name %>
+</p>
+
+<p>
+  <strong>Product Attribute:</strong>
+  <%= @part.product_attribute %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

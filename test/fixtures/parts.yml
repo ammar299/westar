@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Item_PartNumber: MyString
+  PartNumber: MyString
+  Description: MyText
+  PackageLevelGTIN: 1.5
+  height: 1.5
+  width: 1.5
+  length: 1.5
+  shipping_height: 1.5
+  shipping_width: 1.5
+  shipping_length: 1.5
+  weight: 1.5
+
+two:
+  Item_PartNumber: MyString
+  PartNumber: MyString
+  Description: MyText
+  PackageLevelGTIN: 1.5
+  height: 1.5
+  width: 1.5
+  length: 1.5
+  shipping_height: 1.5
+  shipping_width: 1.5
+  shipping_length: 1.5
+  weight: 1.5

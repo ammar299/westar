@@ -1,0 +1,49 @@
+<h1>All Products</h1>
+
+<div>
+  <h3>Filter by Category</h3>
+  <% @categories.each do |category| %>
+    <%= link_to category.name, products_path(category_id: category.id) %>
+  <% end %>
+</div>
+
+<div>
+  <h3>Filter by Vehicle Application</h3>
+  <% @vehicle_applications.each do |application| %>
+    <%= link_to application.name, products_path(vehicle_application_id: application.id) %>
+  <% end %>
+</div>
+
+<div>
+  <h3>Sort by Price</h3>
+  <%= link_to 'Low to High', products_path(sort_by: 'price_asc') %>
+  <%= link_to 'High to Low', products_path(sort_by: 'price_desc') %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= number_to_currency(product.price) %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

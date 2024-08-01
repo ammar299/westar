@@ -1,0 +1,86 @@
+<h1>New Part</h1>
+
+<%= form_with(model: @part, local: true) do |form| %>
+  <% if @part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
+
+      <ul>
+        <% @part.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item_part_number %>
+    <%= form.text_field :item_part_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part_number %>
+    <%= form.text_field :part_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :package_level_gtin %>
+    <%= form.text_field :package_level_gtin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.text_field :length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_height %>
+    <%= form.text_field :shipping_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_width %>
+    <%= form.text_field :shipping_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipping_length %>
+    <%= form.text_field :shipping_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attribute_name %>
+    <%= form.text_area :attribute_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_attribute %>
+    <%= form.text_area :product_attribute %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', parts_path %>
