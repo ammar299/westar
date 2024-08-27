@@ -3,8 +3,9 @@ class CreateParts < ActiveRecord::Migration[7.0]
     create_table :parts do |t|
       t.string :item_part_number
       t.string :part_number
+      t.string :name
       t.text :description
-      t.integer :package_level_gtin
+      t.bigint :package_level_gtin
       t.float :height
       t.float :width
       t.float :length
@@ -14,6 +15,7 @@ class CreateParts < ActiveRecord::Migration[7.0]
       t.float :weight
       t.text :attribute_name
       t.text :product_attribute
+      t.float :price
 
       t.timestamps
     end

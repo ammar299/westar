@@ -1,0 +1,36 @@
+<h1>All Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Phone</th>
+      <th>Date</th>
+      <th>Total Parts</th>
+      <th>Active</th>
+      <th>Status</th>
+      <th>User</th>
+      <th>Total Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.date %></td>
+        <td><%= order.total_parts %></td>
+        <td><%= order.active %></td>
+        <td><%= order.status %></td>
+        <td><%= order&.user&.name %></td>
+        <td><%= number_to_currency(order.total_amount) %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Order', new_order_path %>

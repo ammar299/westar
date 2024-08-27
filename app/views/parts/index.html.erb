@@ -15,6 +15,7 @@
       <th>Shipping Length</th>
       <th>Weight</th>
       <th>Attribute Name</th>
+      <th>Price</th>
       <th>Product Attribute</th>
       <th colspan="3"></th>
     </tr>
@@ -35,6 +36,7 @@
         <td><%= part.shipping_length %></td>
         <td><%= part.weight %></td>
         <td><%= part.attribute_name %></td>
+        <td><%= part.price %></td>
         <td><%= part.product_attribute %></td>
         <td><%= link_to 'Show', part %></td>
         <td><%= link_to 'Edit', edit_part_path(part) %></td>
@@ -47,3 +49,6 @@
 <br>
 
 <%= link_to 'New Part', new_part_path %>
+<br/>
+
+<%= link_to 'Order List', orders_path %>

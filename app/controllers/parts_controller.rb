@@ -5,6 +5,19 @@ class PartsController < ApplicationController
 
   def show
     @part = Part.find(params[:id])
+    session[:cart] ||= []
+  end
+
+  def add_to_cart
+    part_id = params[:id].to_i
+    session[:cart] ||= []
+    if params[:id].present? && !session[:cart].include?(part_id)
+      session[:cart] << part_id 
+      cart_count = session[:cart].count
+      render json: { status: 'Successfuly added' }
+    else
+      render json: { status: 'Already added' }
+    end
   end
 
   def new
@@ -42,6 +55,6 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(:item_part_number, :part_number, :description, :package_level_gtin, :height, :width, :length, :shipping_height, :shipping_width, :shipping_length, :weight, :attribute_name, :product_attribute)
+    params.require(:part).permit(:item_part_number, :part_number, :name, :description, :package_level_gtin, :height, :width, :length, :shipping_height, :shipping_width, :shipping_length, :weight, :price, :attribute_name, :product_attribute)
   end
 end
