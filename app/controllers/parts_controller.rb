@@ -55,6 +55,6 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(:item_part_number, :part_number, :name, :description, :package_level_gtin, :height, :width, :length, :shipping_height, :shipping_width, :shipping_length, :weight, :price, :attribute_name, :product_attribute)
+    params.require(:part).permit(:item_part_number, :part_number, :name, :description, :package_level_gtin, :height, :width, :length, :shipping_height, :shipping_width, :shipping_length, :weight, :price, :attribute_name, :product_attribute, images: [])
   end
 end

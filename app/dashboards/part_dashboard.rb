@@ -12,6 +12,8 @@ class PartDashboard < Administrate::BaseDashboard
     attribute_name: Field::Text,
     description: Field::Text,
     height: Field::Number.with_options(decimals: 2),
+    images_attachments: Field::HasMany,
+    images_blobs: Field::HasMany,
     item_part_number: Field::String,
     length: Field::Number.with_options(decimals: 2),
     name: Field::String,
@@ -49,6 +51,8 @@ class PartDashboard < Administrate::BaseDashboard
     attribute_name
     description
     height
+    images_attachments
+    images_blobs
     item_part_number
     length
     name
@@ -74,6 +78,8 @@ class PartDashboard < Administrate::BaseDashboard
     attribute_name
     description
     height
+    images_attachments
+    images_blobs
     item_part_number
     length
     name

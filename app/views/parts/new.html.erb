@@ -88,6 +88,11 @@
     <%= form.text_area :product_attribute %>
   </div>
 
+  <div>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

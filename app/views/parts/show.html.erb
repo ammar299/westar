@@ -70,6 +70,14 @@
   <%= @part.product_attribute %>
 </p>
 
+<% if @part.images.attached? %>
+  <% @part.images.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
+<% else %>
+  <p>No images available</p>
+<% end %>
+
 <%= link_to 'Edit', edit_part_path(@part) %> |
 <%= link_to 'Back', parts_path %> |
 <%= button_to 'Add to Cart', add_to_cart_part_path(@part), method: :post, remote: true, class: 'add-to-cart', data: { product_id: @part.id } %>
