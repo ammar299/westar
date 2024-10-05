@@ -201,6 +201,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.2.1)
+    ransack (4.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     redis (4.8.1)
     regexp_parser (2.9.2)
     responders (3.1.1)
@@ -224,6 +228,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smarter_csv (1.12.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -275,9 +280,11 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.4)
   rails-ajax
+  ransack
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver
+  smarter_csv
   sprockets-rails
   stimulus-rails
   stripe

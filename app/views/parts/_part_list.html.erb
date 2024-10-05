@@ -1,0 +1,51 @@
+<div id="part-list" class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Part Name </th>
+        <th>Item Part Number</th>
+        <th>Part Number</th>
+        <th>Description</th>
+        <th>Package Level GTIN</th>
+        <th>Height</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Shipping Height</th>
+        <th>Shipping Width</th>
+        <th>Shipping Length</th>
+        <th>Weight</th>
+        <th>Attribute Name</th>
+        <th>Price</th>
+        <th>Product Attribute</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @parts.each do |part| %>
+        <tr>
+          <td><h3><%= part.name %></h3></td>
+          <td><%= part.item_part_number %></td>
+          <td><%= part.part_number %></td>
+          <td><%= part.description %></td>
+          <td><%= part.package_level_gtin %></td>
+          <td><%= part.height %></td>
+          <td><%= part.width %></td>
+          <td><%= part.length %></td>
+          <td><%= part.shipping_height %></td>
+          <td><%= part.shipping_width %></td>
+          <td><%= part.shipping_length %></td>
+          <td><%= part.weight %></td>
+          <td><%= part.attribute_name %></td>
+          <td><%= number_to_currency(part.price) %></td>
+          <td><%= part.product_attribute %></td>
+          <td>
+            <%= link_to 'Show', part, class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Edit', edit_part_path(part), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

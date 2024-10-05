@@ -11,6 +11,18 @@
  * It is generally better to create a new file per style scope.
  *
  *= require administrate/application
+ *= require style
  *= require_tree .
  *= require_self
  */
+#search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.part {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}

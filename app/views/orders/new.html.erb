@@ -1,6 +1,6 @@
 <div class="container my-5">
   <h1 class="text-center mb-4">New Order</h1>
-  <%= form_for @order, html: { multipart: true } do |form| %>
+  <%= form_for @order, html: { multipart: true, id: "order-form" } do |form| %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
     <div class="row">
@@ -22,19 +22,23 @@
             <th>Part</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Total</th>
           </tr>
         </thead>
         <tbody>
           <%= form.fields_for :order_items do |order_item_form| %>
             <tr class="nested-fields">
               <td>
-                <%= order_item_form.collection_select :part_id, @parts, :id, :name, { prompt: 'Select a part' }, class: "form-control" %>
+                <%= order_item_form.collection_select :part_id, @parts, :id, :name, { prompt: 'Select a part' }, class: "form-control part-select", data: { price: :price } %>
               </td>
               <td>
-                <%= number_to_currency(order_item_form.object.part&.price || 0) %>
+                <span class="part-price"><%= number_to_currency(order_item_form.object.part&.price || 0) %></span>
               </td>
               <td>
-                <%= order_item_form.number_field :quantity, min: 1, class: "form-control" %>
+                <%= order_item_form.number_field :quantity, min: 1, class: "form-control quantity-input", value: order_item_form.object.quantity || 1 %>
+              </td>
+              <td>
+                <span class="item-total"><%= number_to_currency(order_item_form.object.quantity.to_i * (order_item_form.object.part&.price || 0)) %></span>
               </td>
             </tr>
           <% end %>
@@ -42,10 +46,94 @@
       </table>
     </div>
 
+    <h3>Total Amount: <span id="order-total"><%= number_to_currency(0) %></span></h3>
+
+    <h2>Payment</h2>
+    <div class="card shadow-lg border-0 mb-4">
+      <div class="card-body">
+        <label for="card-element">Credit or Debit Card</label>
+        <div id="card-element"></div>
+        <div id="card-errors" role="alert"></div>
+        <input type="hidden" name="amount" id="payment-amount" value="0">
+        <button type="submit" id="submit-button" class="btn btn-primary mt-3">Create Order and Pay</button>
+      </div>
+    </div>
+
     <div class="text-center">
-      <%= form.submit "Create Order", class: "btn btn-primary" %>
+      <%= link_to 'Back', orders_path, class: "btn btn-secondary" %>
     </div>
   <% end %>
-
-  <%= link_to 'Back', orders_path, class: "btn btn-secondary" %>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  var stripe = Stripe('<%= ENV["STRIPE_PUBLISHABLE_KEY"] %>');
+  var elements = stripe.elements();
+  var card = elements.create('card');
+  card.mount('#card-element');
+
+  // Function to calculate the total payment amount
+  function updateTotal() {
+    var totalAmount = 0;
+    document.querySelectorAll('.nested-fields').forEach(function(row) {
+      var priceElement = row.querySelector('.part-price');
+      var quantityElement = row.querySelector('.quantity-input');
+      var totalElement = row.querySelector('.item-total');
+
+      var price = parseFloat(priceElement.innerText.replace(/[^0-9.-]+/g, ""));
+      var quantity = parseInt(quantityElement.value) || 0;
+      var itemTotal = price * quantity;
+
+      totalElement.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(itemTotal);
+      totalAmount += itemTotal;
+    });
+
+    // Update the order total
+    document.getElementById('order-total').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalAmount);
+    // Update hidden payment amount
+    document.getElementById('payment-amount').value = totalAmount * 100; // Convert to cents
+  }
+
+  // Event listeners for quantity changes and part selection
+  document.querySelectorAll('.quantity-input').forEach(function(input) {
+    input.addEventListener('change', updateTotal);
+  });
+
+  document.querySelectorAll('.part-select').forEach(function(select) {
+    select.addEventListener('change', function() {
+      var selectedOption = select.options[select.selectedIndex];
+      var price = parseFloat(selectedOption.getAttribute('data-price')) || 0;
+      var priceElement = select.closest('.nested-fields').querySelector('.part-price');
+      priceElement.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
+      updateTotal();
+    });
+  });
+
+  // Handle form submission
+  var form = document.getElementById('order-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    var totalAmount = document.getElementById('payment-amount').value;
+
+    // Create a Stripe token
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // Show error in #card-errors
+        document.getElementById('card-errors').textContent = result.error.message;
+      } else {
+        // Insert the token into the form
+        var tokenInput = document.createElement('input');
+        tokenInput.setAttribute('type', 'hidden');
+        tokenInput.setAttribute('name', 'stripeToken');
+        tokenInput.setAttribute('value', result.token.id);
+        form.appendChild(tokenInput);
+        
+        // Prepare to send the order and payment details
+        form.submit(); // Submit the form to create the order
+      }
+    });
+  });
+
+  // Initial total calculation
+  updateTotal();
+</script>

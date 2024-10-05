@@ -1,6 +1,13 @@
 class PartsController < ApplicationController
   def index
-    @parts = Part.all
+    @q = Part.ransack(params[:q])
+    @parts = @q.result(distinct: true)
+  end
+
+  def search
+    @q = Part.ransack(params[:q])
+    @parts = @q.result(distinct: true)
+    render partial: 'parts/part_list', locals: { parts: @parts }
   end
 
   def show
@@ -50,6 +57,38 @@ class PartsController < ApplicationController
     @part = Part.find(params[:id])
     @part.destroy
     redirect_to parts_path
+  end
+
+  def import
+    uploaded_file = params[:file] # Assuming you have a file input in your form
+    file_path = uploaded_file.path
+
+    ImportPartsJob.perform_now(file_path) # Use perform_now instead of perform_later
+
+    flash[:notice] = "Import started successfully."
+    redirect_to parts_path
+  rescue => e
+    flash[:alert] = "Import failed: #{e.message}"
+    redirect_to parts_path
+  end
+
+  def export
+    file_path = Rails.root.join('tmp', 'parts_export.csv').to_s # Convert to string
+    ExportPartsJob.perform_later(file_path)
+
+    flash[:notice] = "Export started. The file will be available for download shortly."
+    redirect_to parts_path
+  end
+
+  def download_export
+    file_path = Rails.root.join('tmp', 'parts_export.csv')
+
+    if File.exist?(file_path)
+      send_file file_path, type: 'text/csv', filename: 'parts_export.csv'
+    else
+      flash[:alert] = "Export file not found."
+      redirect_to parts_path
+    end
   end
 
   private

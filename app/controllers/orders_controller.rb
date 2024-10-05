@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # Initialize a new order
     @order = Order.new(order_params)
 
     # Initialize total amount and total parts
@@ -44,13 +45,32 @@ class OrdersController < ApplicationController
       end
     end
 
-    # Save the order and handle errors
-    if @order.errors.empty? && @order.save
-      session[:cart] = nil
-      session.delete(:cart)
-      redirect_to @order, notice: 'Order was successfully created.'
+    # Proceed to create the order and charge only if there are no validation errors
+    if @order.valid?
+      begin
+        token = params[:stripeToken]
+        charge = Stripe::Charge.create(
+          amount: (@order.total_amount * 100).to_i, # Amount in cents
+          currency: 'usd',
+          source: token,
+          description: 'Payment for services'
+        )
+
+        # If charge is successful, save the order
+        if @order.save
+          session[:cart] = nil # Clear the cart session
+          redirect_to @order, notice: 'Order was successfully created.'
+        else
+          flash[:error] = @order.errors.full_messages.join(", ")
+          redirect_to new_order_path # Redirect back to the new order page
+        end
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to new_order_path # Redirect back to the new order page
+      end
     else
-      render :new
+      flash[:error] = @order.errors.full_messages.join(", ")
+      redirect_to new_order_path # Redirect back to the new order page
     end
   end
 
@@ -76,11 +96,10 @@ class OrdersController < ApplicationController
 
   private
 
- def order_params
+  def order_params
     params.require(:order).permit(
-      :order_id, :phone, :date, :total_parts, :active, :status, :user_id, :total_amount, 
+      :phone, :date, :total_parts, :active, :status, :user_id, :total_amount, 
       order_items_attributes: [:id, :part_id, :quantity, :_destroy]
     )
   end
-
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   get 'payments/new'
   get 'payments/create'
   namespace :admin do
@@ -19,13 +20,17 @@ Rails.application.routes.draw do
   resources :parts do
     post 'add_to_cart', on: :member
     get 'add_to_cart_js', on: :member
+    get 'search', on: :collection
+    post :import, on: :collection
+    get :export, on: :collection
+    get :download_export, on: :collection
   end
 
   # Resources for orders
   resources :orders
 
   # Root route
-  root 'parts#index'
+  root 'home#index'
 
   # Additional routes
   get 'pages/about'
