@@ -1,19 +1,60 @@
+require 'openssl'
 class PaymentsController < ApplicationController
-  def new
+  skip_before_action :verify_authenticity_token
+  before_action :paypal_init, :except => [:index, new]
+
+  def new; end
+  def index; end
+  def create
+  price = '100.00'
+  request = PayPalCheckoutSdk::Orders::OrdersCreateRequest::new
+  request.request_body({
+    :intent => 'CAPTURE',
+    :purchase_units => [
+      {
+        :amount => {
+          :currency_code => 'USD',
+          :value => price
+        }
+      }
+    ]
+  })
+
+  begin
+    response = @client.execute request
+    order = Order.new
+    order.price = price.to_i
+    order.token = response.result.id
+    if order.save
+      return render :json => {:token => response.result.id}, :status => :ok
+    end
+  rescue PayPalHttp::HttpError => ioe
+    # HANDLE THE ERROR
+  end
+end
+
+  def capture_order
+  request = PayPalCheckoutSdk::Orders::OrdersCaptureRequest::new params[:order_id]
+
+  begin
+    response = @client.execute request
+    order = Order.find_by :token => params[:order_id]
+    order.paid = response.result.status == 'COMPLETED'
+
+    if order.save
+      return render :json => {:status => response.result.status}, :status => :ok
+    end
+    rescue PayPalHttp::HttpError => ioe
+      # HANDLE THE ERROR
+    end
   end
 
-  def create
-    token = params[:stripeToken]
-    charge = Stripe::Charge.create(
-      amount: 5000, # Amount in cents (e.g., $50.00)
-      currency: 'usd',
-      source: token,
-      description: 'Payment for services'
-    )
 
-    redirect_to success_path # Redirect to a success page
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_payment_path
+  private
+  def paypal_init
+    client_id = 'YOUR-CLIENT-ID'
+    client_secret = 'YOUR-CLIENT-SECRET'
+    environment = PayPal::SandboxEnvironment.new client_id, client_secret
+    @client = PayPal::PayPalHttpClient.new environment
   end
 end

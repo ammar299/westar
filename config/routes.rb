@@ -36,8 +36,11 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
 
-  get 'payments/new', to: 'payments#new'
-  post 'payments', to: 'payments#create'
+  resources :payments, only: [:new, :create] do
+    collection do
+      post :capture_order
+    end
+  end
   get 'success', to: 'payments#success' # Create success action
   get 'error', to: 'payments#error'     # Create error action
 

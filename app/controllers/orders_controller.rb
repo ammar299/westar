@@ -21,7 +21,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # Initialize a new order
     @order = Order.new(order_params)
 
     # Initialize total amount and total parts
@@ -33,10 +32,7 @@ class OrdersController < ApplicationController
       params[:order][:order_items_attributes].each do |_, item_params|
         part = Part.find_by(id: item_params["part_id"].to_i)
         if part.present?
-          # Build order items for the order
           order_item = @order.order_items.build(part: part, quantity: item_params["quantity"].to_i)
-          
-          # Accumulate total amount and parts
           @order.total_amount += part.price * order_item.quantity
           @order.total_parts += order_item.quantity
         else
@@ -45,32 +41,42 @@ class OrdersController < ApplicationController
       end
     end
 
-    # Proceed to create the order and charge only if there are no validation errors
     if @order.valid?
       begin
         token = params[:stripeToken]
         charge = Stripe::Charge.create(
-          amount: (@order.total_amount * 100).to_i, # Amount in cents
+          amount: (@order.total_amount * 100).to_i,
           currency: 'usd',
           source: token,
-          description: 'Payment for services'
+          description: 'Payment for Westar',
+          metadata: {
+            email: params[:order][:email],
+            name: params[:order][:name],
+            phone: params[:order][:phone]
+          }
         )
 
-        # If charge is successful, save the order
+        # Collect payment details
+        # @order.payment_type = "Credit Card"  # Example payment type
+        # @order.payment_details = charge.to_json
+
         if @order.save
-          session[:cart] = nil # Clear the cart session
+          # Send confirmation email
+          UserMailer.order_confirmation(@order.email, @order).deliver_later  # Use deliver_now if you want to send immediately
+
+          session[:cart] = nil
           redirect_to @order, notice: 'Order was successfully created.'
         else
           flash[:error] = @order.errors.full_messages.join(", ")
-          redirect_to new_order_path # Redirect back to the new order page
+          redirect_to new_order_path
         end
       rescue Stripe::CardError => e
         flash[:error] = e.message
-        redirect_to new_order_path # Redirect back to the new order page
+        redirect_to new_order_path
       end
     else
       flash[:error] = @order.errors.full_messages.join(", ")
-      redirect_to new_order_path # Redirect back to the new order page
+      redirect_to new_order_path
     end
   end
 
@@ -98,7 +104,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(
-      :phone, :date, :total_parts, :active, :status, :user_id, :total_amount, 
+      :phone, :name, :email, :date, :total_parts, :active, :status, :user_id, :total_amount, 
       order_items_attributes: [:id, :part_id, :quantity, :_destroy]
     )
   end

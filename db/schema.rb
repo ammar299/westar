@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_27_015728) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_08_165506) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,24 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_015728) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "makes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "year_id", null: false
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["year_id"], name: "index_makes_on_year_id"
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.string "name"
+    t.bigint "make_id", null: false
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["make_id"], name: "index_models_on_make_id"
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "part_id", null: false
@@ -63,6 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_015728) do
     t.decimal "total_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "name"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -84,6 +104,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_015728) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "model_id"
+    t.bigint "year_id"
+    t.index ["model_id"], name: "index_parts_on_model_id"
+    t.index ["year_id"], name: "index_parts_on_year_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,8 +122,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_015728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "years", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "makes", "years"
+  add_foreign_key "models", "makes"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "parts"
+  add_foreign_key "parts", "models"
+  add_foreign_key "parts", "years"
 end

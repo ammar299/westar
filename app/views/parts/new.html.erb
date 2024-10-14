@@ -88,9 +88,24 @@
     <%= form.text_area :product_attribute %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :images %>
     <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model_id, "Model" %>
+    <%= form.collection_select :model_id, Model.all, :id, :name, { include_blank: true }, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_id, "Year" %>
+    <%= form.collection_select :year_id, Year.all, :id, :year, { include_blank: true }, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :make_id, "Make" %>
+    <%= form.collection_select :make_id, Make.all, :id, :name, { include_blank: true }, class: 'form-control' %>
   </div>
 
   <div class="actions">

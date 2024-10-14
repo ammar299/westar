@@ -1,11 +1,14 @@
 class PartsController < ApplicationController
   def index
-    @q = Part.ransack(params[:q])
+    @q = Part.joins(model: :make).ransack(params[:q])
     @parts = @q.result(distinct: true)
+    if @q.count > 3
+      @parts = Part.all
+    end
   end
 
   def search
-    @q = Part.ransack(params[:q])
+    @q = Part.joins(model: :make).ransack(params[:q])
     @parts = @q.result(distinct: true)
     render partial: 'parts/part_list', locals: { parts: @parts }
   end
@@ -29,6 +32,9 @@ class PartsController < ApplicationController
 
   def new
     @part = Part.new
+    @makes = Make.all
+    @models = Model.all
+    @years = Year.all
   end
 
   def create
@@ -94,6 +100,26 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(:item_part_number, :part_number, :name, :description, :package_level_gtin, :height, :width, :length, :shipping_height, :shipping_width, :shipping_length, :weight, :price, :attribute_name, :product_attribute, images: [])
+    params.require(:part).permit(
+      :item_part_number,
+      :part_number,
+      :name,
+      :description,
+      :package_level_gtin,
+      :height,
+      :width,
+      :length,
+      :shipping_height,
+      :shipping_width,
+      :shipping_length,
+      :weight,
+      :price,
+      :attribute_name,
+      :product_attribute,
+      :model_id,
+      :year_id,
+      :make_id,
+      images: []
+    )
   end
 end

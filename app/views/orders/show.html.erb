@@ -11,7 +11,7 @@
         <div class="col-md-6 mb-3">
           <p><strong>Order Number:</strong> <%= @order.order_number %></p>
           <p><strong>Phone:</strong> <%= @order.phone %></p>
-          <p><strong>Date:</strong> <%= @order.date.strftime("%B %d, %Y %I:%M %p") %></p>
+          <p><strong>Date:</strong> <%= @order&.date&.strftime("%B %d, %Y %I:%M %p") %></p>
         </div>
         <div class="col-md-6 mb-3">
           <p><strong>Total Parts:</strong> <%= @order.total_parts %></p>

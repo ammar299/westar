@@ -6,6 +6,21 @@
 </div>
 
 <div class="mb-3">
+  <h5>Make</h5>
+  <%= select_tag "q[model_make_id_eq]", options_from_collection_for_select(Make.all, :id, :name, { include_blank: true }), class: 'form-control' %>
+</div>
+
+<div class="mb-3">
+  <h5>Model</h5>
+  <%= select_tag "q[model_id_eq]", options_from_collection_for_select(Model.all, :id, :name, { include_blank: true }), class: 'form-control' %>
+</div>
+
+<div class="mb-3">
+  <h5>Year</h5>
+  <%= select_tag "q[year_id_eq]", options_from_collection_for_select(Year.all, :id, :year, { include_blank: true }), class: 'form-control' %>
+</div>
+
+<div class="mb-3">
   <h5>Price Range</h5>
   <select id="filter-price" class="form-control">
     <option value="">Select Price Range</option>
@@ -28,21 +43,13 @@
   <%= link_to 'Export Parts', export_parts_path, class: 'btn btn-success' %>
   <%= link_to 'Download Export', download_export_parts_path, class: 'btn btn-info' %>
 </div>
+
 <% if flash[:alert] %>
   <div class="alert alert-danger"><%= flash[:alert] %></div>
 <% end %>
 <% if flash[:notice] %>
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
-
-<!-- <div class="mb-3">
-  <h5>Categories</h5>
-  <div>
-    <label><input type="checkbox" class="filter-category" value="Category1"> Category 1</label><br>
-    <label><input type="checkbox" class="filter-category" value="Category2"> Category 2</label><br>
-    <label><input type="checkbox" class="filter-category" value="Category3"> Category 3</label><br>
-  </div>
-</div> -->
 
 <div id="part-list" class="table-responsive">
   <table class="table table-striped">
@@ -61,23 +68,31 @@
   document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search');
     const priceFilter = document.getElementById('filter-price');
-    const categoryFilters = document.querySelectorAll('.filter-category');
+    const makeFilter = document.querySelector('select[name="q[model_make_id_eq]"]');
+    const modelFilter = document.querySelector('select[name="q[model_id_eq]"]');
+    const yearFilter = document.querySelector('select[name="q[year_id_eq]"]');
 
     const fetchParts = () => {
       const query = searchInput.value;
       const priceRange = priceFilter.value;
-      const selectedCategories = Array.from(categoryFilters)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
+      const makeId = makeFilter.value;
+      const modelId = modelFilter.value;
+      const yearId = yearFilter.value;
 
       // Construct the query string
       let url = `/parts/search?q[item_part_number_or_part_number_or_name_or_description_cont]=${query}`;
+      if (makeId) {
+        url += `&q[model_make_id_eq]=${makeId}`;
+      }
+      if (modelId) {
+        url += `&q[model_id_eq]=${modelId}`;
+      }
+      if (yearId) {
+        url += `&q[year_id_eq]=${yearId}`;
+      }
       if (priceRange) {
         const [minPrice, maxPrice] = priceRange.split('-');
         url += `&q[price_gteq]=${minPrice}&q[price_lteq]=${maxPrice}`;
-      }
-      if (selectedCategories.length > 0) {
-        url += `&q[category_in]=${selectedCategories.join(',')}`; // Assumes you have a category attribute
       }
 
       fetch(url)
@@ -89,8 +104,8 @@
 
     searchInput.addEventListener('input', fetchParts);
     priceFilter.addEventListener('change', fetchParts);
-    categoryFilters.forEach(checkbox => {
-      checkbox.addEventListener('change', fetchParts);
-    });
+    makeFilter.addEventListener('change', fetchParts);
+    modelFilter.addEventListener('change', fetchParts);
+    yearFilter.addEventListener('change', fetchParts);
   });
 </script>
