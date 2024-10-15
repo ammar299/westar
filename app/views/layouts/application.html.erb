@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <section aria-labelledby="header-top" class="header-top d-flex align-items-center justify-content-center gap-2 bgclr-gold pt-12 pb-12">
+    <%= image_tag "vehicale-icon.svg", alt: "vehicale-icon", class: "img-fluid", width: 14, height: 13 %>
+    <p class="text-center fs-xs-12 fs-mobile-12 fs-tablet-9 fs-pc-16 lh-xs-18 lh-tablet-14 lh-pc-24 fw-500 m-0 p-0 text-clr-black">
+      Free Shipping On All Orders Above $35
+    </p>
+  </section>
+
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
+
   </body>
 </html>
