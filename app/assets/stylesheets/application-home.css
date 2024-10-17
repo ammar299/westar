@@ -3079,19 +3079,19 @@ textarea.form-control {
 @media (min-width: 320px) {
   .hero-section {
     height: 405px;
-    background-image: url("../images/home-page/background/hero-background-image-for-mobile.webp");
+    background-image: url("hero-background-image-for-mobile.webp");
   }
 }
 @media (min-width: 768px) {
   .hero-section {
     height: 290px;
-    background-image: url("../images/home-page/background/hero-background-image-for-tablet.webp");
+    background-image: url("hero-background-image-for-tablet.webp");
   }
 }
 @media (min-width: 1440px) {
   .hero-section {
     height: 456px;
-    background-image: url("../images/home-page/background/hero-background-image-for-desktop.webp");
+    background-image: url("hero-background-image-for-desktop.webp");
   }
 }
 
@@ -3544,7 +3544,7 @@ textarea.form-control {
   margin-left: 0;
 }
 .sublist li::after {
-  content: url(../images/home-page/icons/sidebar-angle-icon.svg);
+  content: url(sidebar-angle-icon.svg);
   position: absolute;
   right: 0;
   top: 44%;
