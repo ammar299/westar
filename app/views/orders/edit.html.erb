@@ -1,0 +1,49 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">New Order</h1>
+  <%= form_for @order, html: { multipart: true } do |form| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <%= form.label :phone, class: "form-label" %>
+        <%= form.text_field :phone, class: "form-control" %>
+      </div>
+      <div class="col-md-6 mb-3">
+        <%= form.label :active, class: "form-label" %>
+        <%= form.check_box :active, class: "form-check-input" %>
+      </div>
+    </div>
+
+    <h2>Order Items</h2>
+    <div id="order-items">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= form.fields_for :order_items do |order_item_form| %>
+            <tr class="nested-fields">
+              <td>
+                <%= order_item_form.collection_select :part_id, @parts, :id, :name, { prompt: 'Select a part' }, class: "form-control" %>
+              </td>
+              <td>
+                <%= number_to_currency(order_item_form.object.part&.price || 0) %>
+              </td>
+              <td>
+                <%= order_item_form.number_field :quantity, min: 1, class: "form-control" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit "Update Order", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

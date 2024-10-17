@@ -1,0 +1,6 @@
+<h1>Order Confirmation</h1>
+
+<p>Thank you for your order, <%= @order.name %>!</p>
+<p>Your order number is <strong><%= @order.order_number %></strong>.</p>
+<p>Total Amount: <%= number_to_currency(@order.total_amount) %></p>
+<p>We appreciate your business!</p>

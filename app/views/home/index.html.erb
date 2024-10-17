@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- swiper slider css file (from local Dir) -->
+    <link rel="stylesheet" href="./assets/swiper/swiper-bundle.min.css" />
+    <!-- swiper slider css file (from cdn) -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+
+    <!-- main css file -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>westar home page</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- header top  -->
+      <section
+        aria-labelledby="header-top"
+        class="header-top d-flex align-items-center justify-content-center gap-2 bgclr-gold pt-12 pb-12"
+      >
+        <img
+          src="./assets/images/home-page/icons/vehicale-icon.svg"
+          alt="vehicale-icon"
+          class="img-fluid"
+          width="14px"
+          height="13px"
+        />
+        <p
+          class="text-center fs-xs-12 fs-mobile-12 fs-tablet-9 fs-pc-16 lh-xs-18 lh-tablet-14 lh-pc-24 fw-500 m-0 p-0 text-clr-black"
+        >
+          Free Shipping On All Orders Above $35
+        </p>
+      </section>
+      <!-- header nnavigations  -->
+      <header
+        class="header-section bgclr-teal text-white"
+        aria-labelledby="header"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="d-flex align-items-center justify-content-md-between gap-3 gap-md-0"
+              >
+                <!-- navigations  -->
+                <div class="order-2 order-md-0 d-flex align-items-center">
+                  <button
+                    class="btn p-0"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebar-navigation"
+                    aria-controls="sidebar-navigation"
+                  >
+                    <%= image_tag 'home-page/icons/nav-icon.svg', class: 'img-fluid', width: '25.5', height: '22.7', alt: 'mobile navigation icon' %>
+                  </button>
+                  <div
+                    class="p-0 ps-md-2 ps-lg-5 d-none d-md-flex align-items-center gap-2"
+                  >
+                    <%= image_tag 'home-page/icons/map-locator-icon.svg', class: 'img-fluid', width: '24', height: '24', alt: 'map map-locator-icon' %>
+                    <p
+                      class="m-0 p-0 fw-400 fs-pc-16 lh-pc-24 fs-tablet-9 lh-tablet-14 text-clr-white"
+                    >
+                      Hello Select Address
+                    </p>
+                  </div>
+                </div>
+                <!-- logo  -->
+                <div
+                  class="comapy-logo order-0 order-md-1 p-0 pe-md-5 me-auto me-md-0"
+                >
+                  <a href="/#">
+                    <%= image_tag 'logo/westar-header-logo-yellow.svg', alt: 'westat-logo-yellow', class: 'img-fluid', width: '153', height: '40' %>
+                  </a>
+                </div>
+                <div class="d-md-none">
+                  <button class="p-0 btn">
+                    <%= image_tag 'home-page/icons/car-icons.svg', class: 'img-fluid', width: '24', height: '24', alt: 'car-icons' %>
+                  </button>
+                </div>
+                <!-- cart  -->
+                <div class="order-1 d-flex align-items-center">
+                  <a
+                    href="/#"
+                    class="d-none d-md-flex text-decoration-underline text-reset fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 p-0 pe-md-2 pe-lg-5"
+                    >Track Order</a
+                  >
+                  <button class="btn p-0">
+                    <img
+                      src="./assets/images/home-page/icons/header-cart-icon.svg"
+                      alt=" cart icon"
+                      class="img-fluid"
+                      width="34px"
+                      height="34px"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- mobile navigations (sidebar) start -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="sidebar-navigation"
+        aria-labelledby="sidebar-navigation-label"
+      >
+        <div class="offcanvas-header">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          class="offcanvas-body d-flex flex-column justify-content-between h-100"
+        >
+          <div class="">
+            <div class="d-flex justify-content-between align-items-center">
+              <span
+                ><%= image_tag 'home-page/icons/sidebar-home-icon.svg', class: 'img-fluid', width: '24', height: '34', alt: 'sidebar home icon' %></span>
+              <a href="/#"
+                class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">
+                Hello Select Address
+                <span>
+                  <%= image_tag 'home-page/icons/sidebar-map-locator-icon.svg', class: 'img-fluid ms-2', width: '24', height: '34', alt: 'sidebar map locator icon' %>
+                  </span>
+              </a>
+            </div>
+            <!-- sidebar links  -->
+            <div class="">
+              <div
+                class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle"
+              >
+                <div class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle">
+                <span>
+                  <%= image_tag 'home-page/icons/sidebar-chat-icon.svg', class: 'img-fluid', width: '24', height: '24', alt: 'sidebar chat icon' %>
+                </span>
+                <a href="/" class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">Live Chat</a>
+              </div>
+
+              <div class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle">
+                <span>
+                  <%= image_tag 'home-page/icons/sidebar-phone-icon.svg', class: 'img-fluid', width: '24', height: '24', alt: 'sidebar phone icon' %>
+                </span>
+                <a href="/" class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">+1 888 374 5088</a>
+              </div>
+
+              <div class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle">
+                <span>
+                  <%= image_tag 'home-page/icons/sidebar-file-icon.svg', class: 'img-fluid', width: '24', height: '24', alt: 'sidebar file icon' %>
+                </span>
+                <a href="/" class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">Track Order</a>
+              </div>
+
+              <div class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle">
+                <span>
+                  <%= image_tag 'home-page/icons/sidebar-file-icon.svg', class: 'img-fluid', width: '24', height: '24', alt: 'sidebar file icon' %>
+                </span>
+                <a href="/" class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">My Account</a>
+              </div>
+            </div>
+            <!-- sidebar categories -->
+            <div class="py-4">
+              <ul class="main-list m-0 p-0">
+                <li class="list-item">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="fw-600 fs-pc-20 lh-pc-30 text-clr-black">
+                      Categories 1</span
+                    >
+                    <span class="icon">+</span>
+                  </div>
+                  <ul class="sublist">
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                  </ul>
+                </li>
+                <li class="list-item">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="fw-600 fs-pc-20 lh-pc-30 text-clr-black">
+                      Categories 2</span
+                    >
+                    <span class="icon">+</span>
+                  </div>
+                  <ul class="sublist">
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                  </ul>
+                </li>
+                <li class="list-item">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span class="fw-600 fs-pc-20 lh-pc-30 text-clr-black">
+                      Categories 3</span
+                    >
+                    <span class="icon">+</span>
+                  </div>
+                  <ul class="sublist">
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                    <li><span>Sublist 1-1</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-auto">
+            <div class="d-flex justify-content-between align-items-center py-3">
+              <div
+                class="d-flex gap-3 justify-content-start align-items-center"
+              >
+                <div class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle">
+                  <span class="flex-shrink-0">
+                    <%= image_tag 'home-page/icons/circle-flags_us.svg', class: 'img-fluid rounded-circle flex-shrink-0', width: '24', height: '24', alt: 'sidebar chat icon' %>
+                  </span>
+                  <a href="/" class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black">United States</a>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <span class="text-uppercase fw-400 fs-pc-16 lh-pc-24 fw-500 text-clr-black">usd</span>
+                  <span>
+                    <%= image_tag 'home-page/icons/sidebar-angle-icon.svg', width: '8', height: '8', class: 'img-fluid', alt: '' %>
+                  </span>
+                </div>
+
+                <div class="d-flex py-3 align-items-center justify-content-around">
+                  <div class="d-flex flex-column align-items-center gap-3">
+                    <%= image_tag 'home-page/icons/sidebar-phone-icon.svg', width: '24', height: '24', class: 'img-fluid', alt: 'icons' %>
+                    <a href="tel:+1 888 374 5088" class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black">About us</a>
+                  </div>
+                  
+                  <div class="d-flex flex-column align-items-center gap-3">
+                    <%= image_tag 'home-page/icons/sidebar-phone-icon.svg', width: '24', height: '24', class: 'img-fluid', alt: 'icons' %>
+                    <a href="tel:+1 888 374 5088" class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black">Blog</a>
+                  </div>
+                  
+                  <div class="d-flex flex-column align-items-center gap-3">
+                    <%= image_tag 'home-page/icons/sidebar-phone-icon.svg', width: '24', height: '24', class: 'img-fluid', alt: 'icons' %>
+                    <a href="tel:+1 888 374 5088" class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black">Help Centre</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- search-bar section  -->
+      <section
+        class="search-bar-section bg-transparent"
+        aria-labelledby="search-bar"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-12 offset-md-2 col-md-8">
+              <div class="bgclr-teal search-bar text-white">
+                <form
+                  action=""
+                  class="d-flex flex-column align-items-start justify-content-start gap-3"
+                >
+                  <input
+                    type="text"
+                    name="search"
+                    id="search"
+                    class="form-control rounded-pill fs-xs-12 fs-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 fw-500 text-clr-black"
+                    placeholder="Search for your product..."
+                  />
+                  <div
+                    class="search-tags d-flex align-items-center justify-content-start gap-3"
+                  >
+                    <button
+                      type="submit"
+                      class="btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill"
+                    >
+                      vehicle
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill"
+                    >
+                      Part Number
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill"
+                    >
+                      Part Type
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- hot deal slider   -->
+      <section class="hot-deal-section bgclr-white text-clr-black pt-60 pb-60">
+  <div class="container d-flex flex-column gap-3 gap-lg-4">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div class="title d-flex align-items-center gap-2 justify-content-start">
+          <span>
+            <%= image_tag 'home-page/icons/hot-deal-icon.svg', width: '18', height: '24', class: 'img-fluid position-relative', alt: 'hot deal icon' %>
+          </span>
+          <h2 class="text-clr-black fw-500 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 fs-xs-16 lh-xs-24 m-0">Hot Deals</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="swiper mySwiperHotDeal">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 1' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 2' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 3' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 4' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 5' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content position-relative rounded-4">
+                <div class="slider-img rounded-4">
+                  <%= image_tag 'home-page/hot-deal-slider-img-1.jpg', class: 'img-fluid rounded-4', width: '345', height: '294', alt: 'hot deal slider 6' %>
+                </div>
+                <div class="slider-text rounded-4 p-3 d-flex flex-column justify-content-between w-100 h-100 position-absolute start-0 top-0">
+                  <h3 class="text-clr-white fw-600 fs-xs-20 lh-xs-30 fs-pc-26 lh-pc-39 fs-tablet-15 lh-tablet-20 m-0 p-0">Buy a Motor Mount Kit GET 10% OFF</h3>
+                  <div>
+                    <a href="./#" class="btn bgclr-gold text-capitalize text-black fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill px-3">Shop Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- section  -->
+<section class="section-wrapper bgclr-white" aria-labelledby="Silence the Vibration">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="text-start text-sm-center col-12 col-sm-10 col-md-8 col-lg-6">
+        <h2 class="text-clr-black fw-600 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 fs-xs-16 lh-xs-24 m-0">
+          Silence the Vibration
+        </h2>
+        <h3 class="text-clr-teal fw-600 fs-pc-16 lh-pc-24 fs-tablet-14 lh-tablet-21 fs-xs-14 lh-xs-21 m-0">
+          By using premium rubber, our mount absorb the vibration, noise and any hardness caused by bad engine mounts
+        </h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-12 col-lg-8">
+        <div class="section-image d-flex align-items-center justify-content-center">
+          <%= image_tag 'home-page/silence-the-vibration-1.png', width: '251', height: '157', class: 'img-fluid flex-shrink-1 d-none d-md-flex', alt: 'silence the vibration' %>
+          <%= image_tag 'home-page/silence-the-vibration-1.png', width: '251', height: '157', class: 'img-fluid flex-shrink-1', alt: 'silence the vibration' %>
+          <%= image_tag 'home-page/silence-the-vibration-2.png', width: '200', height: '205', class: 'img-fluid flex-shrink-1', alt: 'silence the vibration' %>
+          <%= image_tag 'home-page/silence-the-vibration-2.png', width: '200', height: '205', class: 'img-fluid flex-shrink-1', alt: 'silence the vibration' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section (search by part type) -->
+<section class="search-by-part-type pt-60 pb-60 bgclr-white">
+  <div class="container d-flex flex-column gap-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-start">
+          <h2 class="text-clr-black fw-600 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 fs-xs-16 lh-xs-24 m-0">
+            Search by part type
+          </h2>
+          <h3 class="text-clr-teal fw-600 fs-pc-16 lh-pc-24 fs-tablet-14 lh-tablet-21 fs-xs-14 lh-xs-21 m-0">
+            Over 4000 motor mounts, crazy inventory
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="swiper mySwiperSearchByPartType">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider-content d-flex flex-column gap-2">
+                <div class="slider-img d-flex align-items-center justify-content-center">
+                  <%= image_tag 'home-page/search-by-part-type-1.jpg', width: '187', height: '192', class: 'img-fluid align-self-center mx-auto my-auto', alt: 'slider product thumb' %>
+                </div>
+                <div class="slider-text bgclr-transparent">
+                  <h3 class="text-clr-black fw-600 fs-xs-14 lh-xs-21 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 p-0 m-0">
+                    Engine motor mount
+                  </h3>
+                  <p class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0">
+                    Manufactured to absorb Vibration
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content d-flex flex-column gap-2">
+                <div class="slider-img d-flex align-items-center justify-content-center">
+                  <%= image_tag 'home-page/search-by-part-type-1.jpg', width: '187', height: '192', class: 'img-fluid align-self-center mx-auto my-auto', alt: 'slider product thumb' %>
+                </div>
+                <div class="slider-text bgclr-transparent">
+                  <h3 class="text-clr-black fw-600 fs-xs-14 lh-xs-21 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 p-0 m-0">
+                    Engine motor mount
+                  </h3>
+                  <p class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0">
+                    Manufactured to absorb Vibration
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content d-flex flex-column gap-2">
+                <div class="slider-img d-flex align-items-center justify-content-center">
+                  <%= image_tag 'home-page/search-by-part-type-1.jpg', width: '187', height: '192', class: 'img-fluid align-self-center mx-auto my-auto', alt: 'slider product thumb' %>
+                </div>
+                <div class="slider-text bgclr-transparent">
+                  <h3 class="text-clr-black fw-600 fs-xs-14 lh-xs-21 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 p-0 m-0">
+                    Engine motor mount
+                  </h3>
+                  <p class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0">
+                    Manufactured to absorb Vibration
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content d-flex flex-column gap-2">
+                <div class="slider-img d-flex align-items-center justify-content-center">
+                  <%= image_tag 'home-page/search-by-part-type-1.jpg', width: '187', height: '192', class: 'img-fluid align-self-center mx-auto my-auto', alt: 'slider product thumb' %>
+                </div>
+                <div class="slider-text bgclr-transparent">
+                  <h3 class="text-clr-black fw-600 fs-xs-14 lh-xs-21 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 p-0 m-0">
+                    Engine motor mount
+                  </h3>
+                  <p class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0">
+                    Manufactured to absorb Vibration
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slider-content d-flex flex-column gap-2">
+                <div class="slider-img d-flex align-items-center justify-content-center">
+                  <%= image_tag 'home-page/search-by-part-type-1.jpg', width: '187', height: '192', class: 'img-fluid align-self-center mx-auto my-auto', alt: 'slider product thumb' %>
+                </div>
+                <div class="slider-text bgclr-transparent">
+                  <h3 class="text-clr-black fw-600 fs-xs-14 lh-xs-21 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 p-0 m-0">
+                    Engine motor mount
+                  </h3>
+                  <p class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0">
+                    Manufactured to absorb Vibration
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- section (popular makes) -->
+      <section class="section-wrapper bgclr-white">
+        <div class="container d-flex flex-column gap-3">
+          <div class="row mb-2">
+            <div
+              class="col-12 d-flex justify-content-between align-items-center"
+            >
+              <h2
+                class="fw-600 text-clr-black fs-xs-16 lh-xs-24 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 m-0"
+              >
+                Popular Makes
+              </h2>
+              <a
+                href="./#"
+                class="text-reset text-clr-black-70 fw-400 fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 m-0 p-0"
+                >View All</a
+              >
+            </div>
+          </div>
+          <div class="row justify-content-between gy-3">
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2 d-md-none">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+          </div>
+          <div class="row justify-content-between gy-3 d-none d-md-flex">
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+          </div>
+          <div class="row justify-content-between gy-3 d-none d-md-flex">
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+          </div>
+          <div class="row justify-content-between gy-3 d-none d-md-flex">
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                Chevrolet
+              </button>
+            </div>
+            <div class="col-6 col-md-2">
+              <button
+                class="popular-item-btn text-uppercase bg-transparent fw-400 fs-xs-10 lh-xs-15 fs-pc-24 lh-pc-36 fs-tablet-9 lh-tablet-14 m-0"
+              >
+                FORD
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- timeline section  -->
+      <section class="timeline-section bgclr-white pt-60 pb-60">
+        <div class="container d-flex flex-column gap-lg-5">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column gap-1 align-items-center">
+                <h2
+                  class="text-clr-black fw-600 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 fs-xs-16 lh-xs-24 m-0"
+                >
+                  How we make our mounts?
+                </h2>
+                <h3
+                  class="text-clr-teal fw-600 fs-pc-16 lh-pc-24 fs-tablet-14 lh-tablet-21 fs-xs-14 lh-xs-21 m-0"
+                >
+                  We’ve been doing this for a long time.
+                </h3>
+                <p
+                  class="text-clr-black-50 text-decoration-underline fw-400 fs-pc-16 lh-pc-24 fs-tablet-14 lh-tablet-21 fs-xs-14 lh-xs-21 m-0"
+                >
+                  Learn more about westar
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row d-flex flex-column align-items-center justify-content-center"
+          >
+          <div class="col-12 col-md-10 col-lg-7">
+          <ul class="timeline p-0 m-0 d-flex flex-column">
+            <li class="timeline-card">
+              <span class="flex-shrink-0">
+                <%= image_tag 'home-page/icons/timeline-icon.svg', width: '50', height: '50', class: 'img-fluid p-lg-1', alt: 'timeline icon' %>
+              </span>
+              <div class="subcard">
+                <h3 class="timeline-title text-clr-teal fw-500 fs-xs-14 lh-xs-21 fs-pc-24 lh-pc-36 p-0 m-0">
+                  OEM Reverse Engineering
+                </h3>
+                <p class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 p-0 m-0">
+                  We start by reverse engineering OEM mounts, ensuring perfect fit and function.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-card">
+              <span class="flex-shrink-0">
+                <%= image_tag 'home-page/icons/timeline-icon.svg', width: '50', height: '50', class: 'img-fluid p-lg-1', alt: 'timeline icon' %>
+              </span>
+              <div class="subcard">
+                <h3 class="timeline-title text-clr-teal fw-500 fs-xs-14 lh-xs-21 fs-pc-24 lh-pc-36 p-0 m-0">
+                  OEM Reverse Engineering
+                </h3>
+                <p class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 p-0 m-0">
+                  We start by reverse engineering OEM mounts, ensuring perfect fit and function.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-card">
+              <span class="flex-shrink-0">
+                <%= image_tag 'home-page/icons/timeline-icon.svg', width: '50', height: '50', class: 'img-fluid p-lg-1', alt: 'timeline icon' %>
+              </span>
+              <div class="subcard">
+                <h3 class="timeline-title text-clr-teal fw-500 fs-xs-14 lh-xs-21 fs-pc-24 lh-pc-36 p-0 m-0">
+                  OEM Reverse Engineering
+                </h3>
+                <p class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 p-0 m-0">
+                  We start by reverse engineering OEM mounts, ensuring perfect fit and function.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      <!-- apply section  -->
+      <section class="apply-section">
+        <div class="container">
+          <div class="col-12 col-md-8 offset-md-2">
+            <div
+              class="bgclr-gold d-flex flex-column align-items-center gap-1 text-center rounded-4 p-3"
+            >
+              <h2
+                class="fw-600 text-clr-black fs-xs-14 fs-tablet-12 fs-pc-24 m-0"
+              >
+                Unlock our business pricing,
+              </h2>
+              <h2
+                class="fw-600 text-clr-black fs-xs-14 fs-tablet-12 fs-pc-24 m-0"
+              >
+                and get exclusive perks
+              </h2>
+              <img
+                class="img-fluid pt-16 pb-16"
+                width="91"
+                height="55"
+                src="./assets/images/home-page/icons/hand-shek-icons.svg"
+                alt=""
+              />
+              <a
+                class="apply-btn bgclr-black rounded-pill text-capitalize text-decoration-none fw-500 text-clr-white fs-xs-14 fs-pc-24 fs-tablet-12 m-0 pt-8 pb-8"
+                href="/#"
+                >apply now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section (what to expect) -->
+      <section class="what-to-expect bgclr-white pt-60 pb-60">
+        <div class="container d-flex flex-column gap-3 gap-lg-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="col text-center">
+                <h2
+                  class="fw-600 text-clr-black fs-xs-16 lh-xs-24 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 m-0"
+                >
+                  What to expect?
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+              <div class="swiper whatToExpectSlider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div
+                      class="slider-content d-flex flex-column gap-2 gap-lg-3 justify-content-center bgclr-gainsboro rounded-4 p-3"
+                    >
+                      <div class="slider-icon">
+                        <img
+                          width="79"
+                          height="79"
+                          class="img-fluid"
+                          src="./assets/images/home-page/icons/van-icons.svg"
+                          alt="van icon"
+                        />
+                      </div>
+                      <div class="slider-text bgclr-transparent">
+                        <h3
+                          class="text-clr-black fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                        >
+                          Free Shipping
+                        </h3>
+                        <p
+                          class="text-clr-black fw-300 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                        >
+                          Same business day shipping, on all orders received
+                          before 2:30 PM EST
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div
+                      class="slider-content d-flex flex-column gap-2 gap-lg-3 justify-content-center bgclr-gainsboro rounded-4 p-3"
+                    >
+                      <div class="slider-icon">
+                        <img
+                          width="79"
+                          height="79"
+                          class="img-fluid"
+                          src="./assets/images/home-page/icons/van-icons.svg"
+                          alt="van icon"
+                        />
+                      </div>
+                      <div class="slider-text bgclr-transparent">
+                        <h3
+                          class="text-clr-black fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                        >
+                          Free Shipping
+                        </h3>
+                        <p
+                          class="text-clr-black fw-300 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                        >
+                          Same business day shipping, on all orders received
+                          before 2:30 PM EST
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div
+                      class="slider-content d-flex flex-column gap-2 gap-lg-3 justify-content-center bgclr-gainsboro rounded-4 p-3"
+                    >
+                      <div class="slider-icon">
+                        <img
+                          width="79"
+                          height="79"
+                          class="img-fluid"
+                          src="./assets/images/home-page/icons/van-icons.svg"
+                          alt="van icon"
+                        />
+                      </div>
+                      <div class="slider-text bgclr-transparent">
+                        <h3
+                          class="text-clr-black fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                        >
+                          Free Shipping
+                        </h3>
+                        <p
+                          class="text-clr-black fw-300 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                        >
+                          Same business day shipping, on all orders received
+                          before 2:30 PM EST
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div
+                      class="slider-content d-flex flex-column gap-2 gap-lg-3 justify-content-center bgclr-gainsboro rounded-4 p-3"
+                    >
+                      <div class="slider-icon">
+                        <img
+                          width="79"
+                          height="79"
+                          class="img-fluid"
+                          src="./assets/images/home-page/icons/van-icons.svg"
+                          alt="van icon"
+                        />
+                      </div>
+                      <div class="slider-text bgclr-transparent">
+                        <h3
+                          class="text-clr-black fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                        >
+                          Free Shipping
+                        </h3>
+                        <p
+                          class="text-clr-black fw-300 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                        >
+                          Same business day shipping, on all orders received
+                          before 2:30 PM EST
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div
+                      class="slider-content d-flex flex-column gap-2 gap-lg-3 justify-content-center bgclr-gainsboro rounded-4 p-3"
+                    >
+                      <div class="slider-icon">
+                        <img
+                          width="79"
+                          height="79"
+                          class="img-fluid"
+                          src="./assets/images/home-page/icons/van-icons.svg"
+                          alt="van icon"
+                        />
+                      </div>
+                      <div class="slider-text bgclr-transparent">
+                        <h3
+                          class="text-clr-black fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                        >
+                          Free Shipping
+                        </h3>
+                        <p
+                          class="text-clr-black fw-300 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                        >
+                          Same business day shipping, on all orders received
+                          before 2:30 PM EST
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- customers service section -->
+      <section
+        class="service-section bgclr-wihte pb-60"
+        aria-labelledby="customers service section"
+      >
+        <div class="container d-flex flex-column gap-2 gap-md-4">
+          <div class="row">
+            <div class="col text-center">
+              <h2
+                class="fw-600 text-clr-black fs-xs-16 lh-xs-24 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 m-0"
+              >
+                Served millions of customers
+              </h2>
+              <h3
+                class="fw-400 text-clr-black fs-xs-14 lh-xs-24 fs-pc-16 lh-pc-24 fs-tablet-14 lh-tablet-21 m-0"
+              >
+                Shop with confidence
+              </h3>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div
+              class="col-12 col-sm-8 d-flex align-items-center justify-content-center gap-3 gap-md-5"
+            >
+              <div class="text-start text-sm-center">
+                <h2
+                  class="fw-600 text-clr-teal fs-pc-26 lh-pc-36 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  99%
+                </h2>
+                <h3
+                  class="fw-500 text-clr-black fs-pc-20 lh-pc-30 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  Fill rate
+                </h3>
+              </div>
+              <div class="text-start text-sm-center">
+                <h2
+                  class="fw-600 text-clr-teal fs-pc-26 lh-pc-36 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  4000
+                </h2>
+                <h3
+                  class="fw-500 text-clr-black fs-pc-20 lh-pc-30 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  Motor Mounts
+                </h3>
+              </div>
+              <div class="text-start text-sm-center">
+                <h2
+                  class="fw-600 text-clr-teal fs-pc-26 lh-pc-36 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  2%
+                </h2>
+                <h3
+                  class="fw-500 text-clr-black fs-pc-20 lh-pc-30 fs-tablet-16 lh-tablet-21 fs-xs-16 lh-xs-24 m-0 p-0"
+                >
+                  Average Returns
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section -->
+      <section class="bgclr-gold pt-48 pb-48">
+        <div class="container">
+          <div class="row pb-37">
+            <div class="col-12 text-md-center">
+              <h2
+                class="text-clr-black text-capitalize fw-600 fs-xs-20 lh-xs-30 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 p-0 m-0"
+              >
+                Why buy
+              </h2>
+              <a href="/#"
+                ><img
+                  src="./assets/images/logo/westar-logo-blue.svg"
+                  alt=" wester company logo"
+              /></a>
+            </div>
+          </div>
+          <div class="row gy-4">
+            <div class="col-md-4">
+              <div class="section-wizard">
+                <img
+                  width="48"
+                  height="48"
+                  class="img-fluid pb-12"
+                  src="./assets/images/home-page/icons/best-price-1.svg"
+                  alt=" best price icons"
+                />
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  Problem Solving mounts with price, a crazy combination
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  A lot of engine mount manufacturers are buying form the same
+                  factories, same parts and packaging it with their own brand.
+                  they are not going the extra mile to see how they can actually
+                  give you a mount that solves your problem
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-wizard">
+                <img
+                  width="48"
+                  height="48"
+                  class="img-fluid pb-12"
+                  src="./assets/images/home-page/icons/best-price-1.svg"
+                  alt=" best price icons"
+                />
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  Shop kits, and finish the repair
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  A lot of engine mount manufacturers are buying form the same
+                  factories, same parts and packaging it with their own brand.
+                  they are not going the extra mile to see how they can actually
+                  give you a mount that solves your problem
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-wizard">
+                <img
+                  width="48"
+                  height="48"
+                  class="img-fluid pb-12"
+                  src="./assets/images/home-page/icons/best-price-1.svg"
+                  alt=" best price icons"
+                />
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  Money Back Guarantee
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  A lot of engine mount manufacturers are buying form the same
+                  factories, same parts and packaging it with their own brand.
+                  they are not going the extra mile to see how they can actually
+                  give you a mount that solves your problem
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section  -->
+      <section class="bgclr-white pt-60 pb-60">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3
+                class="d-flex flex-column pb-8 flex-md-row align-items-md-center gap-md-4 text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-24 lh-pc-36 fs-tablet-14 lh-tablet-21 m-0 p-0"
+              >
+                <span>Customers loves us, see why.</span>
+
+                <span
+                  class="d-flex gap-1 align-items-center justify-content-start"
+                >
+                  <img
+                    class="img-fluid"
+                    width="31"
+                    height="31"
+                    src="./assets/images/home-page/icons/star-icons.svg"
+                    alt=" star icons"
+                  />
+                  <img
+                    class="img-fluid"
+                    width="31"
+                    height="31"
+                    src="./assets/images/home-page/icons/star-icons.svg"
+                    alt=" star icons"
+                  />
+                  <img
+                    class="img-fluid"
+                    width="31"
+                    height="31"
+                    src="./assets/images/home-page/icons/star-icons.svg"
+                    alt=" star icons"
+                  />
+                  <img
+                    class="img-fluid"
+                    width="31"
+                    height="31"
+                    src="./assets/images/home-page/icons/star-icons.svg"
+                    alt=" star icons"
+                  />
+                  <img
+                    class="img-fluid"
+                    width="31"
+                    height="31"
+                    src="./assets/images/home-page/icons/star-icons.svg"
+                    alt=" star icons"
+                  />
+                  <span
+                    class="fw-500 ms-3 text-clr-black fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                    >4.8</span
+                  >
+                </span>
+              </h3>
+
+              <p
+                class="text-clr-black fw-400 fs-xs-12 lh-xs-18 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+              >
+                Over one million shoppers and counting
+              </p>
+            </div>
+          </div>
+          <div class="row pt-19 gy-3">
+            <div class="col-md-4">
+              <div class="section-wizard bgclr-whitesmoke rounded-3 p-3">
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  “they went the extra mile”
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  I needed a mount and these guys were the first ones to step up
+                  and help me and give me all the info i needed.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-wizard bgclr-whitesmoke rounded-3 p-3">
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  “they went the extra mile”
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  I needed a mount and these guys were the first ones to step up
+                  and help me and give me all the info i needed.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-wizard bgclr-whitesmoke rounded-3 p-3">
+                <h3
+                  class="text-clr-black fw-500 fs-xs-20 lh-xs-30 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17"
+                >
+                  “they went the extra mile”
+                </h3>
+                <p
+                  class="text-clr-black fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 m-0 p-0"
+                >
+                  I needed a mount and these guys were the first ones to step up
+                  and help me and give me all the info i needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- newsletter subcsription section -->
+      <section class="subscription-section bgclr-black pt-20 pb-20">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-md-center pb-8">
+              <h2
+                class="text-clr-white fw-500 fs-xs-16 lh-xs-24 fs-tablet-10 lh-tablet-14 fs-pc-16 lh-pc-24 m-0 p-0"
+              >
+                Be First To Know
+              </h2>
+              <h3
+                class="text-clr-gold fw-600 fs-xs-20 lh-xs-30 fs-tablet-12 lh-tablet-17 fs-pc-16 lh-pc-24 m-0 p-0"
+              >
+                Stay Tuned for Under-the-Hood Deals
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="subscription-form">
+                <form action="">
+                  <div
+                    class="d-flex gap-2 align-items-center justify-content-md-center"
+                  >
+                    <div class="position-relative">
+                      <span
+                        ><img
+                          width="20"
+                          height="16"
+                          class="img-fluid position-absolute top-0 start-0 mt-12 ms-3"
+                          src="./assets/images/home-page/icons/email-icons.svg"
+                          alt="email icons"
+                      /></span>
+                      <input
+                        type="email"
+                        class="form-control w-100 pt-8 pb-8 ps-5 text-clr-black rounded"
+                        placeholder="Your email"
+                        aria-label="Your email"
+                        aria-describedby="subscribe button"
+                      />
+                    </div>
+                    <button
+                      class="btn bgclr-teal text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded btn-submit ps-lg-4 pe-lg-4 align-self-stretch"
+                      type="submit"
+                      id="subscribe button"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer  -->
+      <section class="footer-links-section bgclr-teal pt-20">
+        <!-- footer links section ( desktop, tablet ) -->
+        <div class="container d-none d-md-block">
+          <div class="row gy-4">
+            <div class="col-md-3">
+              <div class="d-flex flex-column gap-3">
+                <h3
+                  class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                >
+                  Get in Touch
+                </h3>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <img
+                      width="24"
+                      height="24"
+                      class="img-fluid flex-shrink-0"
+                      src="./assets/images/home-page/icons/material-symbols_chat-outline.svg"
+                      alt=" chat icons "
+                    />
+                    <div class="d-flex flex-column">
+                      <h4
+                        class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Chat with us
+                      </h4>
+                      <h5
+                        class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                      >
+                        Support Hours Mon-Sun: 7*24h
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <img
+                      width="24"
+                      height="24"
+                      class="img-fluid flex-shrink-0"
+                      src="./assets/images/home-page/icons/phone-icons.svg"
+                      alt=" chat icons "
+                    />
+                    <div class="d-flex flex-column">
+                      <h4
+                        class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Phone
+                      </h4>
+                      <h5
+                        class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                      >
+                        Support Hours Mon-Sun: 7*24h
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <img
+                      width="24"
+                      height="24"
+                      class="img-fluid flex-shrink-0"
+                      src="./assets/images/home-page/icons/email-footer-icon.svg"
+                      alt=" chat icons "
+                    />
+                    <div class="d-flex flex-column">
+                      <h4
+                        class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Email
+                      </h4>
+                      <h5
+                        class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                      >
+                        Support Hours Mon-Sun: 7*24h
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <img
+                      width="24"
+                      height="24"
+                      class="img-fluid flex-shrink-0"
+                      src="./assets/images/home-page/icons/help-line-icons.svg"
+                      alt=" chat icons "
+                    />
+                    <div class="d-flex flex-column">
+                      <h4
+                        class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Help guide
+                      </h4>
+                      <h5
+                        class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                      >
+                        Support Hours Mon-Sun: 7*24h
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <img
+                      width="24"
+                      height="24"
+                      class="img-fluid flex-shrink-0"
+                      src="./assets/images/home-page/icons/feedback-icon.svg"
+                      alt=" chat icons "
+                    />
+                    <div class="d-flex flex-column">
+                      <h4
+                        class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Feedback
+                      </h4>
+                      <h5
+                        class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                      >
+                        Support Hours Mon-Sun: 7*24h
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex flex-column gap-3">
+                <h3
+                  class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                >
+                  Popular Makes
+                </h3>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <div class="d-flex flex-column gap-3">
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        BMW parts
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        BMW parts
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        BMW parts
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        BMW parts
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        BMW parts
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex flex-column gap-3">
+                <h3
+                  class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                >
+                  Customer Service
+                </h3>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <div class="d-flex flex-column gap-3">
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Track order
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Track order
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Track order
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Track order
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        Track order
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="d-flex flex-column gap-3">
+                <h3
+                  class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                >
+                  Information
+                </h3>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex flex-row gap-2 align-items-center">
+                    <div class="d-flex flex-column gap-3">
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        About us
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        About us
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        About us
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        About us
+                      </a>
+                      <a
+                        href="./#"
+                        class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                      >
+                        About us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer links accordion section ( mobile ) -->
+        <div class="container d-md-none">
+          <div class="row">
+            <div class="col-12">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2
+                    class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                  >
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Get in Touch
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                          <img
+                            width="24"
+                            height="24"
+                            class="img-fluid flex-shrink-0"
+                            src="./assets/images/home-page/icons/material-symbols_chat-outline.svg"
+                            alt=" chat icons "
+                          />
+                          <div class="d-flex flex-column">
+                            <h4
+                              class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                            >
+                              Chat with us
+                            </h4>
+                            <h5
+                              class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                            >
+                              Support Hours Mon-Sun: 7*24h
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                          <img
+                            width="24"
+                            height="24"
+                            class="img-fluid flex-shrink-0"
+                            src="./assets/images/home-page/icons/phone-icons.svg"
+                            alt=" chat icons "
+                          />
+                          <div class="d-flex flex-column">
+                            <h4
+                              class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                            >
+                              Phone
+                            </h4>
+                            <h5
+                              class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                            >
+                              Support Hours Mon-Sun: 7*24h
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                          <img
+                            width="24"
+                            height="24"
+                            class="img-fluid flex-shrink-0"
+                            src="./assets/images/home-page/icons/email-footer-icon.svg"
+                            alt=" chat icons "
+                          />
+                          <div class="d-flex flex-column">
+                            <h4
+                              class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                            >
+                              Email
+                            </h4>
+                            <h5
+                              class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                            >
+                              Support Hours Mon-Sun: 7*24h
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                          <img
+                            width="24"
+                            height="24"
+                            class="img-fluid flex-shrink-0"
+                            src="./assets/images/home-page/icons/help-line-icons.svg"
+                            alt=" chat icons "
+                          />
+                          <div class="d-flex flex-column">
+                            <h4
+                              class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                            >
+                              Help guide
+                            </h4>
+                            <h5
+                              class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                            >
+                              Support Hours Mon-Sun: 7*24h
+                            </h5>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                          <img
+                            width="24"
+                            height="24"
+                            class="img-fluid flex-shrink-0"
+                            src="./assets/images/home-page/icons/feedback-icon.svg"
+                            alt=" chat icons "
+                          />
+                          <div class="d-flex flex-column">
+                            <h4
+                              class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                            >
+                              Feedback
+                            </h4>
+                            <h5
+                              class="text-clr-white-70 fw-400 fs-xs-10 lh-xs-15 fs-pc-12 lh-pc-18 fs-tablet-7 lh-tablet-10 m-0 p-0"
+                            >
+                              Support Hours Mon-Sun: 7*24h
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2
+                    class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                  >
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Popular Makes
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="d-flex flex-row gap-2 align-items-center">
+                        <div class="d-flex flex-column gap-3">
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            BMW parts
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            BMW parts
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            BMW parts
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            BMW parts
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            BMW parts
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2
+                    class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                  >
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Customer Service
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="d-flex flex-row gap-2 align-items-center">
+                        <div class="d-flex flex-column gap-3">
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            Track order
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            Track order
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            Track order
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            Track order
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            Track order
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2
+                    class="text-clr-white fw-600 fs-xs-16 lh-xs-24 fs-pc-20 lh-pc-30 fs-tablet-12 lh-tablet-17 m-0 p-0"
+                  >
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapsefour"
+                      aria-expanded="false"
+                      aria-controls="collapsefour"
+                    >
+                      Information
+                    </button>
+                  </h2>
+                  <div
+                    id="collapsefour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      <div class="d-flex flex-row gap-2 align-items-center">
+                        <div class="d-flex flex-column gap-3">
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            About us
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            About us
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            About us
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            About us
+                          </a>
+                          <a
+                            href="./#"
+                            class="text-clr-white text-reset text-decoration-none fw-500 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+                          >
+                            About us
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer social links section -->
+        <div class="container">
+          <div
+            class="row gy-4 gy-xl-0 flex-column flex-lg-row py-3 border-top border-bottom border-secondary-subtle mt-20"
+          >
+            <div
+              class="col-12 col-xl-4 d-flex flex-column align-items-center align-items-xl-start gap-3"
+            >
+              <h4
+                class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+              >
+                Follow us on
+              </h4>
+              <div
+                class="d-flex gap-4 align-items-center justify-content-start"
+              >
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_facebook.svg"
+                    alt=" facebook "
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/skill-icons_instagram.svg"
+                    alt="instagram"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_youtube-icon.svg"
+                    alt="youtube"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/prime_twitter.svg"
+                    alt="twitter"
+                /></a>
+              </div>
+            </div>
+            <div
+              class="col-12 offset-xl-3 col-xl-5 d-flex flex-column align-items-center align-items-xl-start gap-3"
+            >
+              <h4
+                class="text-clr-white fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+              >
+                We Accept
+              </h4>
+              <div
+                class="d-flex gap-4 align-items-center justify-content-start"
+              >
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt=" facebook "
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="instagram"
+                /></a>
+
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="twitter"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="twitter"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="twitter"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="twitter"
+                /></a>
+                <a class="flex-shrink-0" href="./#"
+                  ><img
+                    width="39"
+                    height="39"
+                    class="img-fluid flex-shrink-0"
+                    src="./assets/images/home-page/icons/logos_mastercard.svg"
+                    alt="twitter"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer copy right -->
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-12 text-center">
+              <p
+                class="text-clr-white-70 fw-400 fs-xs-14 lh-xs-21 fs-pc-16 lh-pc-24 fs-tablet-10 lh-tablet-14 p-0 m-0"
+              >
+                Copyright &copy; 2022 - 2024 Westar.com. All Rights Reserved.
+                <a class="text-reset text-decoration-underline" href="./#"
+                  >California Supply Chain Disclosure Privacy Policy</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- home js file (local Dir) -->
+    <script src="./assets/js/home.js"></script>
+    <!-- bootstrap js file (from local Dir) -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <!-- swiper slider js file (from local) -->
+    <script src="./assets/swiper/swiper-bundle.min.js"></script>
+    <!-- cdn link (for global usage) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script> -->
+
+    <script>
+      // to use (init) this slider you have to use this camel case class name in html
+      // slider first
+      const swiper = new Swiper(".mySwiperHotDeal", {
+        // Optional parameters
+        spaceBetween: 30,
+        freeMode: true,
+        loop: true,
+        slidesPerView: 4,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true,
+        },
+        breakpoints: {
+          // Responsive breakpoints
+          320: {
+            slidesPerView: 2,
+            centeredSlides: true,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        },
+
+        // If we need pagination
+        // pagination: {
+        //   el: ".swiper-pagination",
+        // },
+
+        // Navigation arrows
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+      });
+
+      // slider second
+      const swiper2 = new Swiper(".mySwiperSearchByPartType", {
+        // Optional parameters
+        spaceBetween: 30,
+        freeMode: true,
+        loop: true,
+        slidesPerView: 4,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true,
+        },
+        breakpoints: {
+          // Responsive breakpoints
+          320: {
+            slidesPerView: 2,
+            centeredSlides: true,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        },
+
+        // If we need pagination
+        // pagination: {
+        //   el: ".swiper-pagination",
+        // },
+
+        // Navigation arrows
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+      });
+
+      // slider third
+      const swiper3 = new Swiper(".whatToExpectSlider", {
+        // Optional parameters
+        spaceBetween: 30,
+        freeMode: true,
+        loop: true,
+        slidesPerView: 3,
+        centeredSlides: false,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true,
+        },
+        breakpoints: {
+          // Responsive breakpoints
+          320: {
+            slidesPerView: 2,
+            centeredSlides: true,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+
+        // If we need pagination
+        // pagination: {
+        //   el: ".swiper-pagination",
+        // },
+
+        // Navigation arrows
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+      });
+    </script>
+  </body>
+</html>
