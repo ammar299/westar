@@ -2,9 +2,6 @@ class PartsController < ApplicationController
   def index
     @q = Part.joins(model: :make).ransack(params[:q])
     @parts = @q.result(distinct: true)
-    if @q.count > 3
-      @parts = Part.all
-    end
   end
 
   def search
