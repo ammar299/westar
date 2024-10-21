@@ -7,355 +7,214 @@
         </h3>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-7">
-        <div class="d-flex flex-column gap-3">
-          <!-- single cart items -->
-          <div class="border rounded-1 border-clr-black-20 p-3 bgclr-white shadow position-relative">
-            <div class="d-flex gap-3 align-items-start">
-              <div class="flex-shrink-0 cart-items-img">
-                <%= image_tag 'icons/cart-placeholder.png', width: 132, height: 120, class: 'img-fluid flex-shrink-0', alt: 'product items' %>
-              </div>
-              <div class="cart-items-details d-flex flex-column gap-1">
-                <h4 class="text-clr-black pe-3 pe-md-0 fw-500 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24 m-0 p-0">
-                  2 Pcs Rear Power Window Switch for Chevy Silverado 1500 GMC Sierra 1500 Yukon Buick
-                </h4>
-                <p class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">
-                  Part Number: EM-2949
-                </p>
-                <div class="cart-items-count d-flex gap-2 align-items-center">
-                  <span class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">Quantity:</span>
-                  <select id="cart-select-products" class="form-select form-select-sm" aria-label="cart select products">
-                    <option selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-                <p class="cart-items-price text-clr-black fw-500 fs-xs-16 lh-xs-24 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
-                  $24.99
-                </p>
-              </div>
-              <div class="cart-trash flex-shrink-0 align-self-end align-self-md-start">
-                <%= image_tag 'icons/trash.svg', width: 18, height: 19, class: 'img-fluid flex-shrink-0', alt: 'cart trash icons' %>
-              </div>
-            </div>
-            <div class="d-flex gap-2 align-items-center mt-16">
-              <span class="flex-shrink-0">
-                <%= image_tag 'icons/cars-icons.svg', width: 20, height: 17, class: 'img-fluid', alt: 'car icon' %>
-              </span>
-              <span class="fw-600 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24">
-                <span class="fw-500">Fits:</span> 2004 Acura CSV 4-Door Sedan V6 4.5L 350 cc
-              </span>
-            </div>
-          </div>
-          <!-- single cart items -->
-          <div class="border rounded-1 border-clr-black-20 p-3 bgclr-white shadow position-relative">
-            <div class="d-flex gap-3 align-items-start">
-              <div class="flex-shrink-0 cart-items-img">
-                <%= image_tag 'icons/cart-placeholder.png', width: 132, height: 120, class: 'img-fluid flex-shrink-0', alt: 'product items' %>
-              </div>
-              <div class="cart-items-details d-flex flex-column gap-1">
-                <h4 class="text-clr-black pe-3 pe-md-0 fw-500 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24 m-0 p-0">
-                  2 Pcs Rear Power Window Switch for Chevy Silverado 1500 GMC Sierra 1500 Yukon Buick
-                </h4>
-                <p class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">
-                  Part Number: EM-2949
-                </p>
-                <div class="cart-items-count d-flex gap-2 align-items-center">
-                  <span class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">Quantity:</span>
-                  <select id="cart-select-products" class="form-select form-select-sm" aria-label="cart select products">
-                    <option selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-                <p class="cart-items-price text-clr-black fw-500 fs-xs-16 lh-xs-24 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
-                  $24.99
-                </p>
-              </div>
-              <div class="cart-trash flex-shrink-0 align-self-end align-self-md-start">
-                <%= image_tag 'icons/trash.svg', width: 18, height: 19, class: 'img-fluid flex-shrink-0', alt: 'cart trash icons' %>
-              </div>
-            </div>
-            <div class="d-flex gap-2 align-items-center mt-16">
-              <span class="flex-shrink-0">
-                <%= image_tag 'icons/cars-icons.svg', width: 20, height: 17, class: 'img-fluid', alt: 'car icon' %>
-              </span>
-              <span class="fw-600 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24">
-                <span class="fw-500">Fits:</span> 2004 Acura CSV 4-Door Sedan V6 4.5L 350 cc
-              </span>
-            </div>
-          </div>
-          <!-- single cart items -->
-          <div class="border rounded-1 border-clr-black-20 p-3 bgclr-white shadow position-relative">
-            <div class="d-flex gap-3 align-items-start">
-              <div class="flex-shrink-0 cart-items-img">
-                <%= image_tag 'icons/cart-placeholder.png', width: 132, height: 120, class: 'img-fluid flex-shrink-0', alt: 'product items' %>
-              </div>
-              <div class="cart-items-details d-flex flex-column gap-1">
-                <h4 class="text-clr-black pe-3 pe-md-0 fw-500 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24 m-0 p-0">
-                  2 Pcs Rear Power Window Switch for Chevy Silverado 1500 GMC Sierra 1500 Yukon Buick
-                </h4>
-                <p class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">
-                  Part Number: EM-2949
-                </p>
-                <div class="cart-items-count d-flex gap-2 align-items-center">
-                  <span class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">Quantity:</span>
-                  <select id="cart-select-products" class="form-select form-select-sm" aria-label="cart select products">
-                    <option selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </div>
-                <p class="cart-items-price text-clr-black fw-500 fs-xs-16 lh-xs-24 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
-                  $24.99
-                </p>
-              </div>
-              <div class="cart-trash flex-shrink-0 align-self-end align-self-md-start">
-                <%= image_tag 'icons/trash.svg', width: 18, height: 19, class: 'img-fluid flex-shrink-0', alt: 'cart trash icons' %>
-              </div>
-            </div>
-            <div class="d-flex gap-2 align-items-center mt-16">
-              <span class="flex-shrink-0">
-                <%= image_tag 'icons/cars-icons.svg', width: 20, height: 17, class: 'img-fluid', alt: 'car icon' %>
-              </span>
-              <span class="fw-600 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24">
-                <span class="fw-500">Fits:</span> 2004 Acura CSV 4-Door Sedan V6 4.5L 350 cc
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-              <div class="py-3 d-flex flex-column gap-2">
-  <div class="d-flex gap-2 align-items-center">
-    <span>
-      <%= image_tag 'icons/shipping-fast-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'shipping icons' %>
-    </span>
-    <p class="fw-400 fs-xs-12 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-21 m-0 p-0">
-      <span class="fw-700 text-clr-forest-ride">FREE Shipping,</span>
-      Get it Between
-      <span class="fw-700 text-clr-forest-ride">Fri Aug 9 to Mon Aug 12</span>
-    </p>
-  </div>
-  <div>
-    <p class="fw-400 fs-xs-16 lh-xs-24 text-clr-black-70 m-0 p-0">
-      <span>Ships To:</span>
-      <a href="./#" class="fw-600 text-reset text-decoration-underline text-clr-teal">New York, NY</a>
-      <span class="ms-2">
-        <%= image_tag 'icons/link-icon.svg', width: 16, height: 16, class: 'img-fluid' %>
-      </span>
-    </p>
-  </div>
-  <div class="d-flex gap-2 align-items-center">
-    <span>
-      <%= image_tag 'icons/ups-logo-icons.svg', width: 26, height: 32, class: 'img-fluid', alt: 'payment logo icons' %>
-    </span>
-    <span>
-      <%= image_tag 'icons/fedex-logo-icons.svg', width: 57, height: 18, class: 'img-fluid', alt: 'payment logo icons' %>
-    </span>
-    <span>
-      <%= image_tag 'icons/un-postal-service-icons.svg', width: 44, height: 44, class: 'img-fluid', alt: 'payment logo icons' %>
-    </span>
-  </div>
-</div>
+    <div class="container my-5">
+      <h1 class="text-center mb-4">New Order</h1>
+      <%= form_for @order, html: { multipart: true, id: "order-form" } do |form| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-<div class="col-12 col-md-5">
-  <div class="d-flex flex-column gap-3">
-    <h4 class="text-clr-black fw-600 fs-xs-12 lh-xs-18 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
-      Order Summary
-    </h4>
-    <div class="add-coupon-code d-none d-md-block">
-      <label for="apply-coupon" class="text-clr-black mb-8 fw-500 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
-        Coupon code
-      </label>
-      <div class="input-group rounded-0">
-        <input id="apply-coupon" type="text" class="form-control rounded-0" placeholder="Enter Coupon Code" aria-label="Enter Coupon Code" aria-describedby="Enter Coupon Code" />
-        <span class="input-group-text bgclr-black text-clr-white rounded-0" id="Enter Coupon Code">Apply</span>
-      </div>
-    </div>
-    <div class="d-flex flex-column gap-2 border-top border-bottom border-clr-black-20 py-2">
-      <div class="d-flex align-items-center justify-content-between gap-2">
-        <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Item Total</span>
-        <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">$24.99</span>
-      </div>
-      <div class="d-flex align-items-center justify-content-between gap-2">
-        <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
-          Shipping & Handling
-          <em>
-            <a class="ms-2 text-reset fs-xs-8 lh-xs-12 fs-tablet-7 lh-tablet-10 fs-pc-12 lh-pc-24" href="./#">Learn more</a>
-          </em>
-        </span>
-        <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">FREE</span>
-      </div>
-      <!-- only for mobile -->
-      <div class="d-flex d-md-none gap-2 align-items-center justify-content-between">
-        <input type="text" class="w-50 form-control rounded-2 bgclr-whitesmoke text-clr-black" placeholder="Enter Coupon Code" />
-        <button class="btn px-4 py-1 bgclr-white text-clr-black border border-clr-black-20 rounded-2">Apply</button>
-      </div>
-      <div class="d-flex align-items-center justify-content-between gap-2">
-        <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
-          Sales Tax
-          <em>
-            <a class="ms-2 text-reset fs-xs-8 lh-xs-12 fs-tablet-7 lh-tablet-10 fs-pc-12 lh-pc-24" href="./#">Learn more</a>
-          </em>
-        </span>
-        <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">$5.10</span>
-      </div>
-    </div>
-    <div>
-      <div class="d-flex align-items-center justify-content-between gap-2">
-        <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Total</span>
-        <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">$30.10</span>
-      </div>
-    </div>
-    <!-- payment info -->
-    <div class="border-bottom border-clr-black-20 pb-16">
-      <div class="d-flex gap-2 align-items-center bgclr-lynx-white py-2 px-3 rounded">
-        <span>
-          <%= image_tag 'icons/logos-paypal.svg', width: 20, height: 24, alt: 'paypal logo', class: 'img-fluid' %>
-        </span>
-        <p class="fw-400 fs-xs-10 lh-xs-15 fs-tablet-8 lh-tablet-12 fs-pc-13 lh-pc-20 m-0 p-0 text-clr-black">
-          Pay in 4 interest free payments on purchase of $30-$1500.
-          <a href="./#" class="fw-500 text-clr-teal text-decoration-underline">Learn More</a>
-        </p>
-      </div>
-    </div>
-    <!-- payment method -->
-    <div>
-      <h5 class="text-uppercase text-clr-black fw-500 fs-xs-12 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
-        PAYMENT METHODS
-      </h5>
-      <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
-        <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
-          <span>
-            <%= image_tag 'icons/card-icons.svg', width: 20, height: 16, alt: 'visa icon', class: 'img-fluid' %>
-          </span>
-          <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">card</span>
+      <h2>Order Items</h2>
+      <div id="order-items">
+        <% @parts.each do |part| %>
+        <div class="border rounded-1 border-clr-black-20 p-3 bgclr-white shadow position-relative">
+          <div class="d-flex gap-3 align-items-start">
+            <div class="flex-shrink-0 cart-items-img">
+              <% if part.images.attached? %>
+              <%= image_tag part.images.first, width: 132, height: 120, class: 'img-fluid flex-shrink-0', alt: 'product items' %>
+              <% else %>
+              <%#= image_tag 'icons/cart-placeholder.png', width: 132, height: 120, class: 'img-fluid flex-shrink-0', alt: 'product items' %>
+              <% end %>
+            </div>
+            <div class="cart-items-details d-flex flex-column gap-1">
+              <h4 class="text-clr-black pe-3 pe-md-0 fw-500 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24 m-0 p-0">
+                <%= part.description %>
+              </h4>
+              <p class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">
+                Part Number: <%= part.part_number %>
+              </p>
+              <div class="cart-items-count d-flex gap-2 align-items-center">
+                <span class="text-clr-black-70 fw-400 fs-xs-10 lh-xs-18 fs-tablet-6 lh-tablet-14 fs-pc-10 lh-pc-18 m-0 p-0">Quantity:</span>
+                <%= number_field_tag "order_items[][quantity]", 1, min: 1, class: "form-control quantity-input", step: 1 %>
+              </div>
+              <p class="cart-items-price text-clr-black fw-500 fs-xs-16 lh-xs-24 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
+                <span class="item-total" data-price="<%= part.price %>">
+                  <%= number_to_currency(part.price) %>
+                </span>
+              </p>
+              <span class="fw-600 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24">
+                <span class="fw-500">Fits:</span> <%= part.product_attribute %>
+              </span>
+            </div>
+            <div class="cart-trash flex-shrink-0 align-self-end align-self-md-start">
+              <%#= image_tag 'icons/trash.svg', width: 18, height: 19, class: 'img-fluid flex-shrink-0', alt: 'cart trash icons' %>
+            </div>
+          </div>
+          <div class="d-flex gap-2 align-items-center mt-2">
+            <span class="flex-shrink-0">
+              <%#= image_tag 'icons/cars-icons.svg', width: 20, height: 17, class: 'img-fluid', alt: 'car icon' %>
+            </span>
+            <span class="fw-600 fs-xs-10 lh-xs-18 fs-tablet-8 lh-tablet-17 fs-pc-14 lh-pc-24">
+              <span class="fw-500">Fits:</span> <%= part.product_attribute %>
+            </span>
+          </div>
         </div>
-        <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
-          <span>
-            <%= image_tag 'icons/logos_paypal.svg', width: 21, height: 24, alt: 'paypal icon', class: 'img-fluid' %>
-          </span>
-          <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Paypal</span>
-        </div>
-        <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
-          <span>
-            <%= image_tag 'icons/logos_google-pay.svg', width: 60, height: 24, alt: 'google pay icon', class: 'img-fluid' %>
-          </span>
-          <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Google Pay</span>
+        <% end %>
+        <div class="py-3 d-flex flex-column gap-2">
+          <div class="d-flex gap-2 align-items-center">
+            <span>
+              <%#= image_tag 'icons/shipping-fast-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'shipping icons' %>
+            </span>
+            <p class="fw-400 fs-xs-12 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-21 m-0 p-0">
+              <span class="fw-700 text-clr-forest-ride">FREE Shipping,</span>
+              Get it Between
+              <span class="fw-700 text-clr-forest-ride">Fri Aug 9 to Mon Aug 12</span>
+            </p>
+          </div>
+          <div>
+            <p class="fw-400 fs-xs-16 lh-xs-24 text-clr-black-70 m-0 p-0">
+              <span>Ships To:</span>
+              <a href="./#" class="fw-600 text-reset text-decoration-underline text-clr-teal">New York, NY</a>
+              <span class="ms-2">
+                <%#= image_tag 'icons/link-icon.svg', width: 16, height: 16, class: 'img-fluid' %>
+              </span>
+            </p>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <span>
+              <%#= image_tag 'icons/ups-logo-icons.svg', width: 26, height: 32, class: 'img-fluid', alt: 'payment logo icons' %>
+            </span>
+            <span>
+              <%#= image_tag 'icons/fedex-logo-icons.svg', width: 57, height: 18, class: 'img-fluid', alt: 'payment logo icons' %>
+            </span>
+            <span>
+              <%#= image_tag 'icons/un-postal-service-icons.svg', width: 44, height: 44, class: 'img-fluid', alt: 'payment logo icons' %>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="d-grid gap-2 col-12 col-md-8 mx-auto">
-        <button class="btn bgclr-teal text-clr-white rounded-1" type="button">Checkout</button>
-        <button class="btn bgclr-gold text-clr-white rounded-1 d-flex align-items-center gap-2 justify-content-center text-center" type="button">
-          <span>
-            <%= image_tag 'icons/logos-paypal.svg', width: 20, height: 24, alt: 'paypal logo', class: 'img-fluid' %>
-          </span>
-          <span class="text-clr-teal fw-500">Paypal</span>
-        </button>
+      <div class="col-12 col-md-5">
+        <div class="d-flex flex-column gap-3">
+          <h4 class="text-clr-black fw-600 fs-xs-12 lh-xs-18 fs-tablet-12 lh-tablet-17 fs-pc-20 lh-pc-28 m-0 p-0">
+            Order Summary
+          </h4>
+          <div class="add-coupon-code d-none d-md-block">
+            <label for="apply-coupon" class="text-clr-black mb-8 fw-500 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
+              Coupon code
+            </label>
+            <div class="input-group rounded-0">
+              <input id="apply-coupon" type="text" class="form-control rounded-0" placeholder="Enter Coupon Code" aria-label="Enter Coupon Code" aria-describedby="Enter Coupon Code" />
+              <span class="input-group-text bgclr-black text-clr-white rounded-0" id="Enter Coupon Code">Apply</span>
+            </div>
+          </div>
+          <div class="d-flex flex-column gap-2 border-top border-bottom border-clr-black-20 py-2">
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Item Total</span>
+              <span id="item-total" class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24"><%= number_to_currency(0) %></span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
+                Shipping & Handling
+                <em>
+                  <a class="ms-2 text-reset fs-xs-8 lh-xs-12 fs-tablet-7 lh-tablet-10 fs-pc-12 lh-pc-24" href="./#">Learn more</a>
+                </em>
+              </span>
+              <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">FREE</span>
+            </div>
+            <!-- only for mobile -->
+            <div class="d-flex d-md-none gap-2 align-items-center justify-content-between">
+              <input type="text" class="w-50 form-control rounded-2 bgclr-whitesmoke text-clr-black" placeholder="Enter Coupon Code" />
+              <button class="btn px-4 py-1 bgclr-white text-clr-black border border-clr-black-20 rounded-2">Apply</button>
+            </div>
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <span class="fw-400 text-clr-black-70 fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
+                Sales Tax
+                <em>
+                  <a class="ms-2 text-reset fs-xs-8 lh-xs-12 fs-tablet-7 lh-tablet-10 fs-pc-12 lh-pc-24" href="./#">Learn more</a>
+                </em>
+              </span>
+              <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">$5.10</span>
+            </div>
+          </div>
+          <div>
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <span class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Total</span>
+              <span id="order-total" class="fw-600 text-clr-black fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
+                <%= number_to_currency(0 + 5) %>
+              </span>
+            </div>
+          </div>
+          <!-- payment info -->
+          <div class="border-bottom border-clr-black-20 pb-16">
+            <div class="d-flex gap-2 align-items-center bgclr-lynx-white py-2 px-3 rounded">
+              <span>
+                <%#= image_tag 'icons/logos-paypal.svg', width: 20, height: 24, alt: 'paypal logo', class: 'img-fluid' %>
+              </span>
+              <p class="fw-400 fs-xs-10 lh-xs-15 fs-tablet-8 lh-tablet-12 fs-pc-13 lh-pc-20 m-0 p-0 text-clr-black">
+                Pay in 4 interest free payments on purchase of $30-$1500.
+                <a href="./#" class="fw-500 text-clr-teal text-decoration-underline">Learn More</a>
+              </p>
+            </div>
+          </div>
+          <!-- payment method -->
+          <div>
+            <h5 class="text-uppercase text-clr-black fw-500 fs-xs-12 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">
+              PAYMENT METHODS
+            </h5>
+            <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center">
+              <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
+                <span>
+                  <%#= image_tag 'icons/card-icons.svg', width: 20, height: 16, alt: 'visa icon', class: 'img-fluid' %>
+                </span>
+                <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">card</span>
+              </div>
+              <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
+                <span>
+                  <%#= image_tag 'icons/logos_paypal.svg', width: 21, height: 24, alt: 'paypal icon', class: 'img-fluid' %>
+                </span>
+                <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Paypal</span>
+              </div>
+              <div class="border payment-card rounded-1 border-clr-black-20 d-flex flex-column align-items-center justify-content-center">
+                <span>
+                  <%#= image_tag 'icons/logos_google-pay.svg', width: 60, height: 24, alt: 'google pay icon', class: 'img-fluid' %>
+                </span>
+                <span class="fw-600 text-capitalize fs-xs-10 lh-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24">Google Pay</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="d-grid gap-2 col-12 col-md-8 mx-auto">
+              <button class="btn bgclr-teal text-clr-white rounded-1" type="button">Checkout</button>
+              <button class="btn bgclr-gold text-clr-white rounded-1 d-flex align-items-center gap-2 justify-content-center text-center" type="button">
+                <span>
+                  <%#= image_tag 'icons/logos-paypal.svg', width: 20, height: 24, alt: 'paypal logo', class: 'img-fluid' %>
+                </span>
+                <span class="text-clr-teal fw-500">Paypal</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
+      <h2>Payment</h2>
+      <div class="card shadow-lg border-0 mb-4">
+        <div class="card-body">
+          <label for="card-element">Credit or Debit Card</label>
+          <div id="card-element"></div>
+          <div id="card-errors" role="alert"></div>
+          <input type="hidden" name="amount" id="payment-amount" value="0">
+          <button type="submit" id="submit-button" class="btn btn-primary mt-3">Create Order and Pay</button>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <%= link_to 'Back', orders_path, class: "btn btn-secondary" %>
+      </div>
+      <% end %>
     </div>
   </div>
-</div>
 </section>
 
-
-
-
-
-
-
-
-
-
-<div class="container my-5">
-  <h1 class="text-center mb-4">New Order</h1>
-  <%= form_for @order, html: { multipart: true, id: "order-form" } do |form| %>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <%= form.label :phone, class: "form-label" %>
-        <%= form.text_field :phone, class: "form-control", required: true %>
-      </div>
-
-      <div class="col-md-6 mb-3">
-         <%= form.label :name, class: "form-label" %>
-        <%= form.text_field :name, class: "form-check-input", required: true  %>
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <%= form.label :email, class: "form-label" %>
-        <%= form.text_field :email, class: "form-control", required: true %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <div class="col-md-6 mb-3">
-        <%= form.label :active, class: "form-label" %>
-        <%= form.check_box :active, class: "form-check-input" %>
-      </div>
-      </div>
-    </div>
-
-    <h2>Order Items</h2>
-    <div id="order-items">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Part</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= form.fields_for :order_items do |order_item_form| %>
-            <tr class="nested-fields">
-              <td>
-                <%= order_item_form.collection_select :part_id, @parts, :id, :name, { prompt: 'Select a part' }, class: "form-control part-select", data: { price: :price } %>
-              </td>
-              <td>
-                <span class="part-price"><%= number_to_currency(order_item_form.object.part&.price || 0) %></span>
-              </td>
-              <td>
-                <%= order_item_form.number_field :quantity, min: 1, class: "form-control quantity-input", value: order_item_form.object.quantity || 1 %>
-              </td>
-              <td>
-                <span class="item-total"><%= number_to_currency(order_item_form.object.quantity.to_i * (order_item_form.object.part&.price || 0)) %></span>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>Total Amount: <span id="order-total"><%= number_to_currency(0) %></span></h3>
-
-    <h2>Payment</h2>
-    <div class="card shadow-lg border-0 mb-4">
-      <div class="card-body">
-        <label for="card-element">Credit or Debit Card</label>
-        <div id="card-element"></div>
-        <div id="card-errors" role="alert"></div>
-        <input type="hidden" name="amount" id="payment-amount" value="0">
-        <button type="submit" id="submit-button" class="btn btn-primary mt-3">Create Order and Pay</button>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <%= link_to 'Back', orders_path, class: "btn btn-secondary" %>
-    </div>
-  <% end %>
-</div>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
@@ -364,41 +223,41 @@
   var card = elements.create('card');
   card.mount('#card-element');
 
-  // Function to calculate the total payment amount
+  // Function to calculate item total and overall total
   function updateTotal() {
-    var totalAmount = 0;
-    document.querySelectorAll('.nested-fields').forEach(function(row) {
-      var priceElement = row.querySelector('.part-price');
-      var quantityElement = row.querySelector('.quantity-input');
-      var totalElement = row.querySelector('.item-total');
+    var totalAmount = 0; // For overall total
+    var itemTotalAmount = 0; // For item total
+    
+    // Calculate totals for each item
+    document.querySelectorAll('#order-items .border').forEach(function(itemDiv) {
+      var priceElement = itemDiv.querySelector('.item-total');
+      var quantityElement = itemDiv.querySelector('.quantity-input');
 
-      var price = parseFloat(priceElement.innerText.replace(/[^0-9.-]+/g, ""));
+      var price = parseFloat(priceElement.dataset.price) || 0;
       var quantity = parseInt(quantityElement.value) || 0;
       var itemTotal = price * quantity;
 
-      totalElement.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(itemTotal);
-      totalAmount += itemTotal;
+      // Update item total for current item
+      priceElement.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(itemTotal);
+      itemTotalAmount += itemTotal; // Accumulate item total
     });
 
-    // Update the order total
+    // Add the hard-coded number (e.g., 5) to the overall total
+    totalAmount = itemTotalAmount + 5;
+
+    // Update the item total display
+    document.getElementById('item-total').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(itemTotalAmount);
+    
+    // Update the overall total display
     document.getElementById('order-total').innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalAmount);
+    
     // Update hidden payment amount
     document.getElementById('payment-amount').value = totalAmount * 100; // Convert to cents
   }
 
-  // Event listeners for quantity changes and part selection
+  // Event listeners for quantity changes
   document.querySelectorAll('.quantity-input').forEach(function(input) {
     input.addEventListener('change', updateTotal);
-  });
-
-  document.querySelectorAll('.part-select').forEach(function(select) {
-    select.addEventListener('change', function() {
-      var selectedOption = select.options[select.selectedIndex];
-      var price = parseFloat(selectedOption.getAttribute('data-price')) || 0;
-      var priceElement = select.closest('.nested-fields').querySelector('.part-price');
-      priceElement.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
-      updateTotal();
-    });
   });
 
   // Handle form submission
@@ -430,34 +289,25 @@
   updateTotal();
 </script>
 
+<div id="paypal-button-container"></div>
 
-
-
-
-
-
- <div id="paypal-button-container"></div>
-
-  <script
-    id="paypal-sdk-js-src"
-    src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>"
-    data-sdk-integration-source="button-factory"
-  >
-  </script>
-  <script>
-    paypal.Buttons({
-      env: 'sandbox', // Valid values are sandbox and live.
-      createOrder: function(data, actions) {
-      // This function sets up the details of the transaction, including the amount and line item details.
+<script
+id="paypal-sdk-js-src"
+src="https://www.paypal.com/sdk/js?client-id=<%= ENV['PAYPAL_CLIENT_ID'] %>"
+data-sdk-integration-source="button-factory">
+</script>
+<script>
+  paypal.Buttons({
+    env: 'sandbox', // Valid values are sandbox and live.
+    createOrder: function(data, actions) {
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: '0.01' // This will be replaced, I promise
+            value: document.getElementById('payment-amount').value / 100 // Use the calculated total amount
           }
         }]
       });
     },
     onApprove: async (data) => {}
   }).render('#paypal-button-container');
-  </script> 
-   
+</script>
