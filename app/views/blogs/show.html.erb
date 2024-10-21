@@ -1,4 +1,33 @@
-
+<section class="py-2 py-lg-3 bgclr-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="page-breadcrumb" aria-label="breadcrumb">
+          <ul class="m-0 d-flex align-items-center">
+            <li class="">
+              <%= link_to 'Home', root_path, class: 'text-reset fw-300 text-decoration-none fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-15 fs-pc-16 lh-pc-24' %>
+            </li>
+            <li class="">
+              <%= link_to 'Blogs', blogs_path, class: 'text-reset fw-300 text-decoration-none fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-15 fs-pc-16 lh-pc-24' %>
+            </li>
+            <% if @blog&.category.present? %>
+              <li class="">
+                <%= link_to @blog.category.name, category_blogs_path(@blog.category), class: 'text-reset fw-300 text-decoration-none fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-15 fs-pc-16 lh-pc-24' %>
+              </li>
+            <% elsif @category.present? %>
+              <li class="">
+                <%= link_to @category.name, category_blogs_path(@category), class: 'text-reset fw-300 text-decoration-none fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-15 fs-pc-16 lh-pc-24' %>
+              </li>
+            <% end %>
+            <li class="text-clr-black fw-400 fs-xs-10 lh-xs-15 fs-tablet-9 lh-tablet-15 fs-pc-16 lh-pc-24" aria-current="page">
+              <%= @blog.present? ? @blog.title : 'All Blogs' %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="blog-section">
   <div class="container">
     <!-- title  -->
@@ -7,17 +36,17 @@
         <h4
         class="fw-500 text-clr-black fs-xs-16 lh-xs-24 fs-tablet-14 lh-tablet-20 fs-pc-24 lh-pc-30 m-0 p-0"
         >
-        Window Regulator Repair Cost: What to Know
+        <%= @blog.title %>
       </h4>
       <div class="d-flex gap-2 align-items-center">
         <span class="fw-300 me-2 text-clr-black fs-xs-12 lh-xs-18 fs-tablet-7 lh-tablet-10 fs-pc-12 lh-pc-18 m-0 p-0">
-          August 31st, 2022
+         <%= "#{@blog.updated_at.strftime('%B')} #{(@blog.updated_at.day).ordinalize}, #{@blog.updated_at.year}" %>
         </span>
 
         <span>
           <%= link_to image_tag("facebook-icons.svg", width: 24, height: 24, alt: "facebook icons"), "./" %>
         </span>
-
+        
         <span>
           <%= link_to image_tag("youtube-icons.svg", width: 34, height: 24, alt: "youtube icons"), "./" %>
         </span>
@@ -28,10 +57,12 @@
   <div class="row py-3">
     <div class="col-12 col-md-8 col-lg-8">
       <div class="w-100 rounded-1">
-        <%= image_tag("blog-thumb.webp", class: "img-fluid rounded-1", width: 900, height: 477, alt: "blog thumb") %>
+        <%= image_tag(@blog.image, class: "img-fluid rounded-1", width: 900, height: 477, alt: "blog thumb") %>
       </div>
     </div>
+    
 
+    <!-- Sugeested blogs -->
     <div class="col-12 d-none d-md-inline-block col-md-4 col-lg-4">
       <div class="d-flex flex-column gap-2 rounded-2 border border-clr-black-20 p-3">
         <!-- single blog -->
@@ -62,70 +93,13 @@
       </div>
     </div>
   </div>
+
+
+
   <!-- content  -->
   <div class="row">
     <div class="col-12">
       <div class="w-100 blog-content">
-        <p class="blog-paragraph">
-          Operating a car is a complex process that often requires
-          practice and training. However, not all car elements are hard
-          to operate. For instance, the windows are the easiest car
-          components to operate.
-        </p>
-        <p class="blog-paragraph">
-          Operating a car is a complex process that often requires
-          practice and training. However, not all car elements are hard
-          to operate. For instance, the windows are the easiest car
-          components to operate. Therefore, anyone, even kids, can open
-          and close car windows if they know the right button or knob to
-          work. The mechanism for opening and closing your car windows
-          may differ depending on the model and year of manufacture.
-          Regardless, the basics are the same.
-        </p>
-        <p class="blog-paragraph">
-          Most people hardly think of how care windows go up and down
-          because all you need is to push a button. However, the process
-          is more complicated than meets the eyes. Car windows use a
-          mechanism called a window regulator. However, you may not
-          notice that this element exists until your car windows
-          misbehave. For instance, your windows may get jammed or refuse
-          to open all the way or at all. This usually happens if your
-          car window regulator is broken or damaged. Therefore, the
-          right thing to do is repair the regulator. When you encounter
-          this issue, perhaps the first thing to come to your mind is
-          the window regulator repair cost.
-        </p>
-        <div class="">
-          <%= image_tag("blog-thumb-02.webp", class: "img-fluid rounded-2", width: 1360, height: 477, alt: "blog thumb") %>
-        </div>
-        <h5 class="blog-pragraph-title">
-          What you need to know about window regulator repair cost
-        </h5>
-        <p class="blog-paragraph">
-          Before getting into the specifics of car window regulator
-          costs, discussing the basics of this vehicle component would
-          be wise. Therefore, a car window regulator is an apparatus
-          that allows your car window to slide up and down. The device
-          is usually hidden inside the car door behind its inside panel.
-          Additionally, they are typically positioned directly under the
-          window for easy performance. Therefore, you may not even know
-          how it looks unless you have worked on cars. Each door on your
-          vehicle has an independent window regulator. Additionally, a
-          car window regulator usually has a motor that allows
-          performance.
-        </p>
-        <p class="blog-paragraph">
-          Car window regulators are simple and reliable; you do not need
-          to maintain them as long as they work correctly. However, as
-          simple as they are, they are vital components. For instance,
-          if your car window regulator is damaged, you may be unable to
-          open or close your windows. It is important to note that your
-          car’s windows are a vital security element. Therefore, if you
-          cannot operate the windows effectively, your car and property
-          are vulnerable to security issues, like theft. The good thing
-          is that you can replace your regulator and get your windows
-          back and running.
-        </p>
         <h5 class="blog-pragraph-title">Suggested A-Premium Parts</h5>
         <div class="product-card border border-clr-black-20 p-3 rounded-1 d-flex flex-column align-items-center gap-3">
           <div class="">
@@ -138,107 +112,27 @@
             Buy Now
           </a>
         </div>
+        <p class="blog-paragraph">
+          Operating a car is a complex process that often requires
+          practice and training. However, not all car elements are hard
+          to operate. For instance, the windows are the easiest car
+          components to operate.
+        </p>
+        <p class="blog-paragraph">
+          <%= @blog.content%>
+        </p>
+        <p class="blog-paragraph">
+        
+        <div class="">
+          <%= image_tag("blog-thumb-02.webp", class: "img-fluid rounded-2", width: 1360, height: 477, alt: "blog thumb") %>
+        </div>
         <h5 class="blog-pragraph-title">
-          1. How much does a car window regulator repair cost?
+          What you need to know about window regulator repair cost
         </h5>
-        <p class="blog-paragraph">
-          There is no fixed price for repairing a car window regulator
-          because various elements determine the cost. Some of these
-          elements are;
-        </p>
-        <p class="blog-paragraph">
-          Types of car window regulator The type is one of the primary
-          factors influencing the regulator repair costs. There are
-          typically two types of car window regulators in most vehicles;
-        </p>
-        <p class="blog-paragraph">
-          Scissor/gear type. This car window regulator is commonly found
-          in old vehicle models. It is mostly made of metal and heavy.
-          Additionally, it contains two intersecting metal arms that
-          control the upward and downward motion of the car window.
-          Furthermore, powered window cranks power scissor-type
-          regulators. However, some models have motors. Cable-type. This
-          car window regulator is found in modern vehicle models and is
-          lighter. It uses a metal crank and cable to work the windows.
-          Additionally, the cables are attached to a drive mechanism,
-          and a motor powers the regulator. Cable-type car window
-          regulators are easier to repair and hence cheaper than the
-          latter. Car model
-          <br />
-          Another element that affects the cost of repairing a car
-          window regulator is the car model. Typically, the cost differs
-          depending on which year your car was made and the model. Older
-          car models may be harder to repair than new ones because of
-          the availability of their repair parts. For instance, window
-          regulators for Ford Mustang (classic models) can be heavier
-          and metallic. These regulators are harder to acquire and
-          handle. Therefore, they make the repair process more
-          challenging and expensive.
-        </p>
-        <p class="blog-paragraph">
-          On the other hand, modern or earlier car models are easier to
-          repair because their parts are readily available. In addition,
-          as mentioned, modern vehicle models use lighter cable-type car
-          window regulators that are easier to handle and replace.
-        </p>
-        <p class="blog-paragraph">
-          The severity of the issue <br />
-          The severity of the problem with the car window regulator will
-          also influence the repair costs. For instance, if the problem
-          is as simple as the window being jammed or not moving entirely
-          up or down, it will cost less to repair. Normally, the source
-          of the problem may be as simple as a loose cable. However,
-          severe issues like the window dropping inside the door may
-          require higher repair costs. In such cases, the window may
-          damage other elements, like the cables and wires inside the
-          door panel. Additionally, you may incur extra charges for
-          replacing the window if it breaks during the drop.
-        </p>
-        <p class="blog-paragraph">
-          Whether you choose to hire a mechanic or DIY <br />
-          Repairing a window regulator is a simple task that you can do
-          without the help of a mechanic. However, this only applies if
-          you have experience handling vehicles and know how to locate
-          the regulator. Therefore, with the right experience, you can
-          repair your car window regulator by following the steps below;
-        </p>
-        <p class="blog-paragraph">
-          Troubleshoot the problem based on the symptoms presented
-          <br />
-          Remove the inside door panel <br />
-          Disconnect the window from the regulator and its motor <br />
-          Remove the regulator and the motor <br />
-          Repair the regulator <br />
-          Test if the window functions properly <br />
-          Reinstall the window and the panel <br />
-          DIY window regulator repair requires precise procedures and
-          steps. Therefore, any mistake may cause more damage to your
-          vehicle and the components on its door. You can prevent this
-          by using a manual. However, DIY procedures are cheaper because
-          you only need the right tools, experience, and a replacement
-          part. Additionally, you need not incur labor costs. On the
-          other hand, getting the services of a mechanic is slightly
-          more expensive.
-        </p>
-        <h5 class="blog-pragraph-title">
-          2. How long do you need to wait before repairing your window
-          regulator
-        </h5>
-        <p class="blog-paragraph">
-          There is no fixed amount of time you can wait to repair your
-          car’s window regulator. Instead, it all depends on its
-          performance. Additionally, longevity will depend on the
-          quality of your car and its construction. Furthermore, the
-          frequency you put your windows up or down will determine how
-          long the regulator lasts. For instance, frequent window
-          operation may quicken the regulator’s wear and tear. Finally,
-          since the issue is not as black or white as you may assume,
-          the best way to tell if you need to repair the component is by
-          looking out for signs and symptoms of damage.
-        </p>
+        
         <div class="py-4">
           <h5 class="blog-pragraph-title">Suggested Westar Parts</h5>
-
+          
           <!-- Slider main container -->
           <div class="swiper aPremiumSuggestedProductSlider">
             <!-- Additional required wrapper -->
@@ -451,119 +345,7 @@
 
 
 
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Item Part Number:</strong>
-  <%= @part.item_part_number %>
-</p>
-
-<p>
-  <strong>Part Number:</strong>
-  <%= @part.part_number %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @part.description %>
-</p>
-
-<p>
-  <strong>Package Level GTIN:</strong>
-  <%= @part.package_level_gtin %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @part.height %>
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @part.width %>
-</p>
-
-<p>
-  <strong>Length:</strong>
-  <%= @part.length %>
-</p>
-
-<p>
-  <strong>Shipping Height:</strong>
-  <%= @part.shipping_height %>
-</p>
-
-<p>
-  <strong>Shipping Width:</strong>
-  <%= @part.shipping_width %>
-</p>
-
-<p>
-  <strong>Shipping Length:</strong>
-  <%= @part.shipping_length %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @part.weight %>
-</p>
-
-<p>
-  <strong>Attribute Name:</strong>
-  <%= @part.attribute_name %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @part.price %>
-</p>
-
-<p>
-  <strong>Product Attribute:</strong>
-  <%= @part.product_attribute %>
-</p>
-
-<% if @part.images.attached? %>
-<% @part.images.each do |image| %>
-<%= image_tag image %>
-<% end %>
-<% else %>
-<p>No images available</p>
-<% end %>
-
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %> |
-<%= button_to 'Add to Cart', add_to_cart_part_path(@part), method: :post, remote: true, class: 'add-to-cart', data: { product_id: @part.id } %>
-
-
 <script>
-  $(document).ready(function() {
-    $('.add-to-cart').click(function() {
-      var productId = $(this).data('product-id');
-      addPartToCart(productId);
-    });
-  });
-
-  function addPartToCart(partId) {
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
-    $.ajax({
-      url: '/parts/' + partId + '/add_to_cart',
-      type: 'POST',
-      beforeSend: function(xhr) {
-        xhr.setRequestHeader('X-CSRF-Token', csrfToken);
-      },
-      dataType: 'script',
-      success: function(data) {
-        console.log('Part added to cart:', <%= @part.id %>);
-      },
-      error: function(xhr, status, error) {
-        displayErrorMessage("Error adding part to cart: " + error);
-        console.log('Error adding part to cart:', error);
-      }
-    });
-  }
       // to use (init) this slider you have to use this camel case class name in html
       // slider first
   const swiper = new Swiper(".aPremiumSuggestedProductSlider", {

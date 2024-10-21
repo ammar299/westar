@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :categories do
+    resources :blogs
+  end
+  resources :blogs
   get 'home/index'
   get 'payments/new'
   get 'payments/create'

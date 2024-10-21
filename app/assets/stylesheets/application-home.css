@@ -4080,9 +4080,9 @@ textarea.form-control {
 }
 
 .single-blog {
-  --blog-image-01: url("../images/blog-page/blog-image-01.webp");
-  --blog-image-02: url("../images/blog-page/blog-image-01.webp");
-  --blog-image-03: url("../images/blog-page/blog-image-01.webp");
+  --blog-image-01: url("blog-image-01.webp");
+  --blog-image-02: url("blog-image-01.webp");
+  --blog-image-03: url("blog-image-01.webp");
   width: 100%;
   height: 150px;
   background-repeat: no-repeat;

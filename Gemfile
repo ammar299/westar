@@ -29,6 +29,8 @@ gem "stimulus-rails"
 
 gem 'sassc-rails'
 
+#breadcrumbs
+gem 'breadcrumbs_on_rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
