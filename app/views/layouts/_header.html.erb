@@ -1,4 +1,9 @@
-
+<section aria-labelledby="header-top" class="header-top d-flex align-items-center justify-content-center gap-2 bgclr-gold pt-12 pb-12">
+  <%= image_tag "vehicale-icon.svg", alt: "vehicale-icon", class: "img-fluid", width: 14, height: 13 %>
+  <p class="text-center fs-xs-12 fs-mobile-12 fs-tablet-9 fs-pc-16 lh-xs-18 lh-tablet-14 lh-pc-24 fw-500 m-0 p-0 text-clr-black">
+    Free Shipping On All Orders Above $35
+  </p>
+</section>
 <header
 class="header-section bgclr-teal text-white"
 aria-labelledby="header"
@@ -12,6 +17,7 @@ aria-labelledby="header"
           class="btn p-0"
           type="button"
           data-bs-toggle="offcanvas"
+          id="sidebar-navigation-label"
           data-bs-target="#sidebar-navigation"
           aria-controls="sidebar-navigation" >
           <%= image_tag("nav-icon.svg", class: "img-fluid", width: "25.5px", height: "22.7px", alt: "mobile navigation icon") %>
@@ -217,26 +223,14 @@ aria-labelledby="sidebar-navigation-label" >
           <div class="">
             <div class="d-flex justify-content-between align-items-center">
               <span
-                ><img
-                  width="24"
-                  height="34"
-                  class="img-fluid"
-                  src="./assets/images/home-page/icons/sidebar-home-icon.svg"
-                  alt="sidebar home icon"
-              /></span>
+                ><%= image_tag 'sidebar-home-icon.svg', width: 24, height: 34, class: 'img-fluid', alt: 'sidebar home icon' %></span>
               <a
                 href="/#"
                 class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
               >
                 Hello Select Address
                 <span
-                  ><img
-                    width="24"
-                    height="34"
-                    class="img-fluid ms-2"
-                    src="./assets/images/home-page/icons/sidebar-map-locator-icon.svg"
-                    alt=" sidebar map locator icon"
-                /></span>
+                  ><%= image_tag 'sidebar-map-locator-icon.svg', width: 24, height: 34, class: 'img-fluid ms-2', alt: 'sidebar map locator icon' %></span>
               </a>
             </div>
             <!-- sidebar links  -->
@@ -245,13 +239,7 @@ aria-labelledby="sidebar-navigation-label" >
                 class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle"
               >
                 <span
-                  ><img
-                    class="img-fluid"
-                    width="24"
-                    height="24"
-                    src="./assets/images/home-page/icons/sidebar-chat-icon.svg"
-                    alt=" sidebar chat icon"
-                /></span>
+                  ><%= image_tag 'sidebar-chat-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar chat icon' %></span>
                 <a
                   href="/"
                   class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -262,13 +250,7 @@ aria-labelledby="sidebar-navigation-label" >
                 class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle"
               >
                 <span
-                  ><img
-                    class="img-fluid"
-                    width="24"
-                    height="24"
-                    src="./assets/images/home-page/icons/sidebar-phone-icon.svg"
-                    alt=" sidebar chat icon"
-                /></span>
+                  ><%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %></span>
                 <a
                   href="/"
                   class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -279,13 +261,7 @@ aria-labelledby="sidebar-navigation-label" >
                 class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle"
               >
                 <span
-                  ><img
-                    class="img-fluid"
-                    width="24"
-                    height="24"
-                    src="./assets/images/home-page/icons/sidebar-file-icon.svg"
-                    alt=" sidebar chat icon"
-                /></span>
+                  ><%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %></span>
                 <a
                   href="/"
                   class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -296,13 +272,7 @@ aria-labelledby="sidebar-navigation-label" >
                 class="d-flex gap-3 justify-content-start align-items-center py-3 border-bottom border-secondary-subtle"
               >
                 <span
-                  ><img
-                    class="img-fluid"
-                    width="24"
-                    height="24"
-                    src="./assets/images/home-page/icons/sidebar-file-icon.svg"
-                    alt=" sidebar chat icon"
-                /></span>
+                  ><%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %></span>
                 <a
                   href="/"
                   class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -368,13 +338,9 @@ aria-labelledby="sidebar-navigation-label" >
                 class="d-flex gap-3 justify-content-start align-items-center"
               >
                 <span class="flex-shrink-0"
-                  ><img
-                    class="img-fluid rounded-circle flex-shrink-0"
-                    width="24"
-                    height="24"
-                    src="./assets/images/home-page/icons/circle-flags_us.svg"
-                    alt=" sidebar chat icon"
-                /></span>
+                  >
+                  <%= image_tag 'circle-flags_us.svg', width: 24, height: 24, class: 'img-fluid rounded-circle flex-shrink-0', alt: 'US flag icon' %>
+                </span>
                 <a
                   href="/"
                   class="text-reset text-decoration-none m-0 p-0 fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -387,26 +353,14 @@ aria-labelledby="sidebar-navigation-label" >
                   >usd</span
                 >
                 <span
-                  ><img
-                    width="8px"
-                    height="8px"
-                    class="img-fluid"
-                    src="./assets/images/home-page/icons/sidebar-angle-icon.svg"
-                    alt=""
-                /></span>
+                  ><%= image_tag 'sidebar-angle-icon.svg', width: 8, height: 8, class: 'img-fluid', alt: 'angle icon' %></span>
               </div>
             </div>
           </div>
           <!--  -->
           <div class="d-flex py-3 align-items-center justify-content-around">
             <div class="d-flex flex-column align-items-center gap-3">
-              <img
-                width="24"
-                height="24"
-                class="img-fluid"
-                src="./assets/images/home-page/icons/sidebar-phone-icon.svg"
-                alt="icons"
-              />
+              <%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %>
               <a
                 href="tel:+1 888 374 5088"
                 class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -414,13 +368,7 @@ aria-labelledby="sidebar-navigation-label" >
               >
             </div>
             <div class="d-flex flex-column align-items-center gap-3">
-              <img
-                width="24"
-                height="24"
-                class="img-fluid"
-                src="./assets/images/home-page/icons/sidebar-phone-icon.svg"
-                alt="icons"
-              />
+              <%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %>
               <a
                 href="tel:+1 888 374 5088"
                 class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -428,13 +376,7 @@ aria-labelledby="sidebar-navigation-label" >
               >
             </div>
             <div class="d-flex flex-column align-items-center gap-3">
-              <img
-                width="24"
-                height="24"
-                class="img-fluid"
-                src="./assets/images/home-page/icons/sidebar-phone-icon.svg"
-                alt="icons"
-              />
+              <%= image_tag 'sidebar-phone-icon.svg', width: 24, height: 24, class: 'img-fluid', alt: 'sidebar phone icon' %>
               <a
                 href="tel:+1 888 374 5088"
                 class="text-decoration-none text-reset fw-400 fs-pc-16 lh-pc-24 text-clr-black"
@@ -449,54 +391,10 @@ aria-labelledby="sidebar-navigation-label" >
 
 
 <script>
-  const listItems = document.querySelectorAll('.list-item');
-const sublistItems = document.querySelectorAll('.sublist-item');
-
-listItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-        // Select the current sublist and icon
-        const sublist = item.querySelector('.sublist');
-        const icon = item.querySelector('.icon');
-        
-        // If the clicked sublist is already open, close it
-        if (sublist.classList.contains('show')) {
-            sublist.classList.remove('show');
-            icon.textContent = '+';
-            setTimeout(() => {
-                sublist.style.display = 'none';
-            }, 500);  // Duration of the CSS transition (0.5s)
-        } else {
-            // Close all other sublists and reset their icons to plus
-            listItems.forEach(list => {
-                const otherSublist = list.querySelector('.sublist');
-                const otherIcon = list.querySelector('.icon');
-                if (otherSublist.classList.contains('show')) {
-                    otherSublist.classList.remove('show');
-                    otherIcon.textContent = '+';
-                    setTimeout(() => {
-                        otherSublist.style.display = 'none';
-                    }, 500);  // Duration of the CSS transition (0.5s)
-                }
-            });
-            
-            // Open the clicked sublist and change the icon to minus
-            sublist.style.display = 'block';
-            setTimeout(() => {
-                sublist.classList.add('show');
-                icon.textContent = '−';  // Change to minus sign
-            }, 10);  // Small delay to allow transition
-        }
-
-        // Stop the click event from affecting other elements
-        event.stopPropagation();
-    });
-});
-
-// Prevent sublist items from triggering the list item click event
-sublistItems.forEach(subItem => {
-    subItem.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevents click event on sublist items from bubbling up to parent
-    });
-});
-
+    jQuery(document).ready(function() {
+        let sidebarContent = document.getElementById("sidebar-navigation");
+        $('#sidebar-navigation-label, .btn-close').on('click', function() {
+            sidebarContent.classList.toggle('show');
+        })
+    })
 </script>

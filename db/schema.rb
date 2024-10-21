@@ -104,9 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_21_031729) do
   create_table "parts", force: :cascade do |t|
     t.string "item_part_number"
     t.string "part_number"
-    t.string "name"
     t.text "description"
-    t.bigint "package_level_gtin"
+    t.integer "package_level_gtin"
     t.float "height"
     t.float "width"
     t.float "length"
@@ -116,7 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_21_031729) do
     t.float "weight"
     t.text "attribute_name"
     t.text "product_attribute"
-    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "model_id"

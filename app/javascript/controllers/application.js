@@ -8,5 +8,3 @@ application.debug = false // Set to true for development
 window.Stimulus = application // Expose the application globally
 
 export { application }
-
-console.log("-----------------------------------------------")
