@@ -1,7 +1,21 @@
 class PartsController < ApplicationController
+  
   def index
-    @q = Part.joins(model: :make).ransack(params[:q])
-    @parts = @q.result(distinct: true)
+    if params[:search].present? && params[:search_type].present?
+      search_term = params[:search]
+      case params[:search_type]
+      when 'vehicle'
+        @parts = Part.joins(:model, :year).where('models.name ILIKE :search', search: "%#{search_term}%")
+      when 'part_number'
+        @parts = Part.where('part_number ILIKE :search', search: "%#{search_term}%")
+      when 'part_type'
+        @parts = Part.where('description ILIKE :search', search: "%#{search_term}%")
+      else
+        @parts = Part.all
+      end
+    else
+      @parts = Part.all
+    end
   end
 
   def search

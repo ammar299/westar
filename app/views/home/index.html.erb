@@ -82,12 +82,12 @@
     <div class="row">
       <div class="col-12 offset-md-2 col-md-8">
         <div class="bgclr-teal search-bar text-white">
-          <%= form_with(url: '', method: :get, local: true, class: 'd-flex flex-column align-items-start justify-content-start gap-3') do %>
+          <%= form_with(url: parts_path, method: :get, local: true, class: 'd-flex flex-column align-items-start justify-content-start gap-3') do %>
             <%= text_field_tag :search, nil, class: 'form-control rounded-pill fs-xs-12 fs-xs-18 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 fw-500 text-clr-black', placeholder: 'Search for your product...' %>
             <div class="search-tags d-flex align-items-center justify-content-start gap-3">
-              <%= button_tag 'vehicle', type: 'submit', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
-              <%= button_tag 'Part Number', type: 'submit', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
-              <%= button_tag 'Part Type', type: 'submit', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
+              <%= button_tag 'vehicle', type: 'submit', name: 'search_type', value: 'vehicle', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
+              <%= button_tag 'Part Number', type: 'submit', name: 'search_type', value: 'part_number', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
+              <%= button_tag 'Part Type', type: 'submit', name: 'search_type', value: 'part_type', class: 'btn text-capitalize text-white fw-500 fs-xs-14 lh-xs-21 fs-tablet-9 lh-tablet-14 fs-pc-16 lh-pc-24 rounded-pill' %>
             </div>
           <% end %>
         </div>
